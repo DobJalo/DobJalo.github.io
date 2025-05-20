@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Game Dev Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | GameDev Portfolio</title>
   <style>
     :root {
       --main-color: #cc0000;
@@ -16,7 +16,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      scroll-behavior: smooth;
     }
 
     body {
@@ -28,16 +27,13 @@
     header {
       background-color: var(--main-color);
       padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
 
     nav {
       display: flex;
       justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     nav h1 {
@@ -56,9 +52,10 @@
       color: #ffaaaa;
     }
 
-    section {
+    main {
       padding: 4rem 2rem;
-      transition: opacity var(--transition), transform var(--transition);
+      max-width: 800px;
+      margin: auto;
     }
 
     h2 {
@@ -66,12 +63,6 @@
       margin-bottom: 1rem;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
-
-    /* Адаптивность */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -81,7 +72,6 @@
       .nav-links {
         display: flex;
         flex-direction: column;
-        width: 100%;
         margin-top: 1rem;
       }
 
@@ -96,34 +86,14 @@
     <nav>
       <h1>My GameDev Portfolio</h1>
       <div class="nav-links">
-        <a href="#about">About me</a>
-        <a href="#games">Games</a>
-        <a href="#art">Art</a>
-        <a href="#contact">Contact</a>
+        <a href="about.html">About me</a>
+        <a href="games.html">Games</a>
+        <a href="art.html">Art</a>
+        <a href="contact.html">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main class="container">
-    <section id="about">
-      <h2>About Me</h2>
-      <p>Я — разработчица игр, увлечённая созданием уникального игрового опыта и визуального стиля.</p>
-    </section>
-
-    <section id="games">
-      <h2>Games</h2>
-      <p>Здесь будут мои проекты.</p>
-    </section>
-
-    <section id="art">
-      <h2>Art</h2>
-      <p>Здесь будет арт.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Связаться со мной можно через email или соцсети.</p>
-    </section>
-  </main>
-</body>
-</html>
+  <main>
+    <h2>Welcome!</h2>
+    <p>Добро пожаловать в моё портфолио разработчицы
