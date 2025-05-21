@@ -20,7 +20,7 @@ body {
 header {
   background: linear-gradient(to right, var(--red), var(--purple));
   /* Градиентный фон от красного к фиолетовому слева направо */
-  padding: 1rem 2rem;      /* Отступы вокруг содержимого */
+  padding: 0rem 1rem;      /* Отступы вокруг содержимого */
 }
 
 /* Навигация — flex-контейнер */
@@ -129,10 +129,10 @@ main {
 }
 
 /* Эффект при наведении на картинки проектов */
-.projects img:hover {
-  transform: scale(1.05);  /* Легкое увеличение */
-  box-shadow: 0 0 25px var(--purple); /* Фиолетовое свечение */
-}
+/*.projects img:hover {*/
+  /*transform: scale(1.05); */ /* Легкое увеличение */
+  /*box-shadow: 0 0 25px var(--purple);*/ /* Фиолетовое свечение */
+/*}*/
 
 /* Подвал сайта */
 footer {
