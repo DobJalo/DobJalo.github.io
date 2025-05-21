@@ -1,189 +1,164 @@
-/* Определяем CSS переменные для цветов и переходов */
+/* === Цветовые переменные и переходы === */
 :root {
   --bg: #181818;           /* Темный фон страницы */
-  --red: #ff2a2a;          /* Ярко-красный цвет акцента */
-  --purple: #a044ff;       /* Фиолетовый цвет акцента */
-  --text: #eaeaea;         /* Светло-серый цвет текста */
-  --transition: 0.4s ease; /* Время и плавность переходов анимаций */
+  --red: #ff2a2a;          /* Ярко-красный цвет акцентов */
+  --purple: #a044ff;       /* Фиолетовый цвет */
+  --text: #eaeaea;         /* Светлый цвет текста */
+  --transition: 0.4s ease; /* Плавность переходов */
 }
 
-/* Основные стили для тела документа */
+/* === Базовые стили для body === */
 body {
-  background: var(--bg);   /* Фон из переменной */
-  color: var(--text);      /* Цвет текста */
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Используем Orbitron и запасные системные шрифты */
-  margin: 0;               /* Убираем отступы браузера */
-}
-
-/* Стили для верхнего блока - хедера */
-header {
-  position: fixed;       /* фиксируем сверху */
-  top: 0;
-  left: 0;
-  right: 0;              /* вместо width: 100% — чтобы растянуть по всей ширине без сдвигов */
-  background: linear-gradient(to right, var(--red), var(--purple));
-  padding: 0.5rem 1rem;
-  box-sizing: border-box; /* учитываем padding в ширине */
-  z-index: 1000;         /* чтобы был поверх остальных элементов */
-}
-
-/* Добавляем отступ у main, чтобы контент не перекрывался */
-main {
-  padding-top: 3.5rem; /* или больше, если нужно больше воздуха */
-  margin: 0 1rem;
-}
-
-/* Также рекомендую убрать margin и padding у body, или задать их явно: */
-body {
   margin: 0;
-  padding: 0 1rem; /* или 0, в зависимости от дизайна */
+  padding: 0;
   box-sizing: border-box;
 }
 
-/* Навигация — flex-контейнер */
-nav {
-  display: flex;               /* Используем flexbox */
-  justify-content: space-between; /* Распределяем пространство между элементами */
-  align-items: center;         /* Вертикальное выравнивание по центру */
-  flex-wrap: wrap;             /* Позволяем элементам переноситься при нехватке места */
-}
-
-/* Заголовок h1 */
-h1 {
-  font-size: 2rem;         /* Размер шрифта */
-  letter-spacing: 1px;     /* Промежуток между буквами */
-  font-weight: bold;       /* Жирный шрифт */
-}
-
-/* Класс для выделенного текста (в заголовке) */
-.highlight {
-  color: var(--purple);    /* Фиолетовый цвет */
-}
-
-/* Уменьшаем промежуток между NAME SURNAME и Game Development portfolio */
-.header-title h1 {
-  margin-bottom: 0.2rem; /* чуть меньше отступа снизу */
-}
-
-/* Стили для подзаголовка портфолио */
-.header-title .subtitle {
-  font-size: 1.4rem; /* чуть больше размер шрифта */
-  color: var(--white); /* фиолетовый цвет */
-  margin-top: 0; /* убираем верхний отступ */
-  font-weight: 600; /* чуть жирнее */
-  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/ /* простой шрифт */
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Стили для ссылок в навигации */
-.nav-links a {
-  margin-left: 2rem;       /* Отступ слева между ссылками */
-  font-size: 1.2rem;       /* Размер шрифта увеличен */
-  color: var(--text);      /* Цвет текста */
-  text-decoration: none;   /* Убираем подчеркивание */
-  font-weight: bold;       /* Жирный шрифт */
-  position: relative;      /* Для позиционирования псевдоэлемента */
-  transition: color var(--transition); /* Плавное изменение цвета при наведении */
-}
-
-/* Декоративная полоска под ссылкой */
-.nav-links a::after {
-  content: "";             /* Пустой контент, используется как графический элемент */
-  position: absolute;      /* Абсолютное позиционирование относительно ссылки */
+/* === Стили для фиксированного хедера === */
+header {
+  position: fixed;           /* Закрепляем сверху */
+  top: 0;
   left: 0;
-  bottom: -6px;            /* На 6 пикселей ниже текста */
-  width: 100%;             /* Полная ширина ссылки */
-  height: 3px;             /* Толщина полоски */
+  right: 0;
+  background: linear-gradient(to right, var(--red), var(--purple));
+  padding: 0.75rem 1rem;     /* Внутренние отступы */
+  box-sizing: border-box;
+  z-index: 1000;             /* Поверх всего */
+}
+
+/* Контейнер внутри header */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Заголовок имени */
+.header-title h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+  margin-bottom: 0.2rem;
+}
+
+/* Подзаголовок */
+.header-title .subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text);
+}
+
+/* Выделение фиолетовым */
+.highlight {
+  color: var(--purple);
+}
+
+/* Ссылки в навигации */
+.nav-links a {
+  margin-left: 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--text);
+  position: relative;
+  transition: color var(--transition);
+}
+
+/* Подчеркивание при наведении */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
   background: linear-gradient(90deg, var(--red), var(--purple));
-  /* Градиент полоски */
   box-shadow: 0 0 8px var(--red);
-  /* Тень с красным свечением */
-  opacity: 0;              /* Изначально невидима */
-  transform: scaleX(0);    /* Сжата по ширине */
+  opacity: 0;
+  transform: scaleX(0);
   transition: transform var(--transition), opacity var(--transition);
-  border-radius: 4px;      /* Закругленные края */
+  border-radius: 4px;
 }
 
-/* При наведении на ссылку меняем цвет */
 .nav-links a:hover {
-  color: var(--red);       /* Красный цвет текста */
+  color: var(--red);
 }
 
-/* При наведении показываем полоску снизу */
 .nav-links a:hover::after {
-  opacity: 1;              /* Делает полоску видимой */
-  transform: scaleX(1);    /* Расширяем полоску на полную ширину */
+  opacity: 1;
+  transform: scaleX(1);
 }
 
-/* Основной контент страницы */
+/* === Основной контент main === */
 main {
-  padding: 4rem 2rem;      /* Отступы сверху/снизу и слева/справа */
-  text-align: center;      /* Выравнивание текста по центру */
-}
-
-/* Заголовок во вводном разделе */
-.intro h2 {
-  font-size: 2.5rem;       /* Крупный размер шрифта */
-  color: var(--red);       /* Красный цвет */
-  /*margin-bottom: 0.5rem; */  /* Отступ снизу */
-}
-
-/* Параграф во вводном разделе */
-.intro p {
-  font-size: 1.2rem;       /* Средний размер шрифта */
-  color: var(--purple);    /* Фиолетовый цвет */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* более простой шрифт */
-}
-
-/* Иконка с технологиями */
-.tech-icon {
-  /*margin-top: 1rem;*/        /* Отступ сверху */
-  font-size: 1rem;         /* Размер шрифта */
-  color: #999;             /* Светло-серый цвет */
-}
-
-/* Контейнер с проектами */
-.projects {
-  margin-top: 4rem;        /* Отступ сверху */
-  display: flex;           /* Flexbox для расположения */
-  justify-content: center; /* Центрируем по горизонтали */
-  gap: 2rem;               /* Отступы между проектами */
-  flex-wrap: wrap;         /* Перенос строк при нехватке места */
-}
-
-/* Картинки проектов */
-.projects img {
-  width: 300px;            /* Фиксированная ширина */
-  height: 375px;            /* Автоматическая высота */
-  border-radius: 12px;     /* Закругленные углы */
-  box-shadow: 0 0 15px var(--red); /* Красное свечение */
-  transition: transform var(--transition), box-shadow var(--transition);
-  /* Плавное появление эффекта при наведении */
-}
-
-/* Эффект при наведении на картинки проектов */
-/*.projects img:hover {*/
-/*  transform: scale(1.05); */ /* Легкое увеличение */
-/*  box-shadow: 0 0 25px var(--purple);*/ /* Фиолетовое свечение */
-/*}*/
-
-/* Меняем шрифт у "Creating unique gaming experiences" */
-.projects p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* простой, легко читаемый шрифт */
-  font-size: 1.1rem; /* удобный размер */
-  color: var(--text); /* цвет текста (светло-серый) */
-  margin-top: 0; /* убираем верхний отступ */
-  flex-basis: 100%; /**/
-  /*margin-bottom: 1rem;*/
-}
-
-
-/* Подвал сайта */
-/*footer {
-  background: #111; /* Темный фон */
-  /*color: #666; */     /* Серый текст */
- /* padding: 1rem 0;
+  padding-top: 6rem;       /* Отступ сверху, чтобы не залезал под header (примерно высота header + запас) */
+  padding-left: 1rem;
+  padding-right: 1rem;
   text-align: center;
+}
+
+/* Блок intro */
+.intro h2 {
+  font-size: 2.5rem;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+/* Параграф в intro (если появится) */
+.intro p {
+  font-size: 1.2rem;
+  color: var(--purple);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Секция проектов */
+.projects {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Текст о проектах */
+.projects p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 0;
+  flex-basis: 100%;
+}
+
+/* Изображение проекта */
+.projects img {
+  width: 300px;
+  height: 375px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--red);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+/* При наведении на картинку (если нужно) */
+/*
+.projects img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px var(--purple);
+}
+*/
+
+/* Подвал (заполнить позже при необходимости) */
+footer {
+  margin-top: 4rem;
+  padding: 1rem;
+  text-align: center;
+  color: #666;
+  background: #111;
   font-size: 0.9rem;
-}*/
+}
