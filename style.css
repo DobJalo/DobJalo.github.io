@@ -9,13 +9,13 @@
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Exo 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
 }
 
 header {
   background: linear-gradient(to right, var(--red), var(--purple));
-  padding: 1rem 2rem; /* уменьшено с 1.5rem */
+  padding: 1rem 2rem;
 }
 
 nav {
@@ -25,10 +25,14 @@ nav {
   flex-wrap: wrap;
 }
 
+h1, h2 {
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 700;
+}
+
 h1 {
   font-size: 2rem;
   letter-spacing: 1px;
-  font-weight: bold;
 }
 
 .highlight {
@@ -37,10 +41,10 @@ h1 {
 
 .nav-links a {
   margin-left: 2rem;
-  font-size: 1.2rem; /* увеличен размер */
+  font-size: 1.2rem;
   color: var(--text);
   text-decoration: none;
-  font-weight: bold;
+  font-weight: 600;
   position: relative;
   transition: color var(--transition);
 }
@@ -83,6 +87,7 @@ main {
 .intro p {
   font-size: 1.2rem;
   color: var(--purple);
+  font-weight: 400;
 }
 
 .tech-icon {
