@@ -121,9 +121,10 @@ main {
 .projects {
   margin-top: 4rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between; /* Разнести контент по краям */
+  align-items: flex-start;        /* Выровнять по верхнему краю */
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap;                /* Поддержка адаптива */
 }
 
 /* Текст о проектах */
@@ -265,3 +266,10 @@ main {
   background-color: var(--purple);
 }
 
+.text-block {
+  flex: 1;                         /* Занимает доступное пространство */
+  max-width: 600px;               /* Ограничиваем ширину текста */
+  text-align: left;               /* Выравнивание по левому краю */
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
