@@ -54,7 +54,8 @@ h1 {
   color: var(--white); /* фиолетовый цвет */
   margin-top: 0; /* убираем верхний отступ */
   font-weight: 600; /* чуть жирнее */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* простой шрифт */
+  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/ /* простой шрифт */
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Стили для ссылок в навигации */
