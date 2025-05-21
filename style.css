@@ -259,8 +259,8 @@ main {
 }
 
 /* Чтобы обе колонки занимали пространство поровну */
-.text-block,
+/*.text-block,
 .contact-form {
   flex: 1;
   min-width: 300px;
-}
+}*/
