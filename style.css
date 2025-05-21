@@ -20,7 +20,7 @@ body {
 header {
   background: linear-gradient(to right, var(--red), var(--purple));
   /* Градиентный фон от красного к фиолетовому слева направо */
-  padding: 1rem 2rem;      /* Отступы вокруг содержимого */
+  padding: 0rem 1rem;      /* Отступы вокруг содержимого */
 }
 
 /* Навигация — flex-контейнер */
