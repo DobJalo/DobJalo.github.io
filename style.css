@@ -249,18 +249,3 @@ main {
   background-color: var(--purple);
 }
 
-/**/
-/* Расположить текст и форму в одну строку */
-.contact-container {
-  /*display: flex;*/
-  gap: 0.5rem; /* Промежуток между колонками */
-  /*align-items: flex-start;*/
-  /*flex-wrap: wrap;*/ /* Чтобы на маленьких экранах они переносились вниз */
-}
-
-/* Чтобы обе колонки занимали пространство поровну */
-/*.text-block,
-.contact-form {
-  flex: 1;
-  min-width: 300px;
-}*/
