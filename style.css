@@ -47,25 +47,35 @@ h1 {
 
 /* Стили для блока заголовка с подзаголовком */
 .header-title {
-  margin-top: 1rem;
-  text-align: center;      /* Центрируем содержимое */
-  margin-bottom: 1rem;     /* Отступ снизу */
+  text-align: center;
 }
 
-/* Заголовок внутри .header-title */
 .header-title h1 {
-  color: var(--text);      /* Цвет текста из переменной */
-  /* font-size, letter-spacing и font-weight наследуются от h1 */
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--red), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 5px var(--red),
+    0 0 10px var(--red),
+    0 0 20px var(--purple),
+    0 0 30px var(--purple);
+  margin: 0 auto;
+  max-width: max-content;
 }
 
-/* Подзаголовок (маленький текст) */
 .subtitle {
-  font-size: 1rem;         /* Размер шрифта меньше, чем у заголовка */
-  color: var(--purple);    /* Фиолетовый цвет */
-  margin-top: 0.2rem;      /* Отступ сверху */
-  font-weight: 400;        /* Обычная жирность */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Шрифт из body */
+  font-size: 1rem;
+  color: var(--purple);
+  margin-top: 0.2rem;
+  font-weight: 400;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 /* Класс для подсветки текста фиолетовым цветом */
 .highlight {
