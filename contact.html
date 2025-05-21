@@ -4,14 +4,14 @@
   <meta charset="UTF-8" />
   <!-- Установка кодировки документа -->
 
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
-  <!-- Отвечает за адаптивность сайта на мобильных устройствах -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Обеспечение адаптивности сайта на мобильных устройствах -->
 
   <title>NAME SURNAME - Game Developer Portfolio</title>
-  <!-- Заголовок страницы во вкладке браузера -->
+  <!-- Заголовок страницы, отображается во вкладке браузера -->
 
   <link rel="stylesheet" href="style.css" />
-  <!-- Подключение внешнего CSS-файла -->
+  <!-- Подключение внешнего CSS-файла со стилями -->
 
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
   <!-- Подключение шрифта Orbitron из Google Fonts -->
@@ -38,11 +38,15 @@
 
   <!-- Основной контент сайта -->
   <main>
+    <!-- Секция с заголовком Contact -->
     <section class="intro">
       <h2>Contact</h2>
     </section>
 
-    <section class="projects">
+    <!-- ОБЕРТКА для текста и формы с флексбоксом -->
+    <section class="contact-wrapper">
+
+      <!-- Левая колонка с информационным текстом -->
       <div class="text-block">
         <p>My name is NAME SURNAME.</p>
         <p>I develop video games.</p>
@@ -51,41 +55,32 @@
         <p>I develop video games.</p>
         <p>I develop video games.</p>
       </div>
+
+      <!-- Правая колонка — форма обратной связи -->
+      <section class="contact-form">
+        <h2>Contact form</h2>
+
+        <!-- Форма отправки с помощью Formsubmit -->
+        <form action="https://formsubmit.co/your@email.com" method="POST">
+
+          <!-- Поле для имени -->
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="name" required /><br><br>
+
+          <!-- Поле для email -->
+          <label for="email">Email:</label><br>
+          <input type="email" id="email" name="email" required /><br><br>
+
+          <!-- Поле для сообщения -->
+          <label for="message">Message:</label><br>
+          <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+          <!-- Кнопка отправки формы -->
+          <button type="submit">Send</button>
+        </form>
+      </section>
+
     </section>
-
   </main>
-
-<!-- Секция формы обратной связи -->
-<section class="contact-form">
-  <!-- Заголовок секции -->
-  <h2>Contact form</h2>
-
-  <!-- Форма с отправкой через Formsubmit (рекомендуемый способ) -->
-  <form action="https://formsubmit.co/your@email.com" method="POST">
-    
-    <!-- Подпись к полю "Name" -->
-    <label for="name">Name:</label><br>
-    
-    <!-- Поле для ввода имени -->
-    <input type="text" id="name" name="name" required><br><br>
-
-    <!-- Подпись к полю "Email" -->
-    <label for="email">Email:</label><br>
-    
-    <!-- Поле для ввода email -->
-    <input type="email" id="email" name="email" required><br><br>
-
-    <!-- Подпись к полю "Message" -->
-    <label for="message">Message:</label><br>
-    
-    <!-- Текстовое поле для сообщения -->
-    <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-    <!-- Кнопка отправки формы -->
-    <button type="submit">Send</button>
-  </form>
-</section>
-
-
 </body>
 </html>
