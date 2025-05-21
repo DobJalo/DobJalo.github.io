@@ -157,7 +157,7 @@ main {
   color: var(--text); /* цвет текста (светло-серый) */
   margin-top: 0; /* убираем верхний отступ */
   flex-basis: 100%; /**/
-  margin-bottom: 1rem;/**/
+  /*margin-bottom: 1rem;*/
 }
 
 
