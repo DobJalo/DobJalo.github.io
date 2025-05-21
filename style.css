@@ -164,7 +164,7 @@ main {
   color: var(--text);           /* Светлый текст */
   font-family: inherit;         /* Наследуем шрифт */
   font-size: 1rem;
-  resize: vertical;             /* Для textarea разрешаем менять высоту */
+  resize: none;             /* Для textarea разрешаем менять высоту */
 }
 
 /* Кнопка отправки формы */
