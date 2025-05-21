@@ -249,23 +249,18 @@ main {
   background-color: var(--purple);
 }
 
-/* Кнопка отправки */
-/*.contact-form button {
-  background: linear-gradient(to right, var(--red), var(--purple));
-  color: #fff;
-  border: none;
-  padding: 0.85rem 2rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.4s ease;
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
-}*/
+/**/
+/* Расположить текст и форму в одну строку */
+.contact-container {
+  display: flex;
+  gap: 2rem; /* Промежуток между колонками */
+  align-items: flex-start;
+  flex-wrap: wrap; /* Чтобы на маленьких экранах они переносились вниз */
+}
 
-/* Эффект наведения на кнопку */
-/*.contact-form button:hover {
-  background: linear-gradient(to right, var(--purple), var(--red));
-}*/
+/* Чтобы обе колонки занимали пространство поровну */
+.text-block,
+.contact-form {
+  flex: 1;
+  min-width: 300px;
+}
