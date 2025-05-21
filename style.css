@@ -113,10 +113,10 @@ main {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.projects img:hover {
+/*.projects img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px var(--purple);
-}
+}*/
 
 footer {
   text-align: center;
