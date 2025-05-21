@@ -156,7 +156,7 @@ main {
 /* Картинки проектов */
 .projects img {
   width: 300px;            /* Фиксированная ширина */
-  height: 400px;            /* Автоматическая высота */
+  height: 375px;            /* Автоматическая высота */
   border-radius: 12px;     /* Закругленные углы */
   box-shadow: 0 0 15px var(--red); /* Красное свечение */
   transition: transform var(--transition), box-shadow var(--transition);
