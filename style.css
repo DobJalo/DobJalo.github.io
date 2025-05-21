@@ -182,7 +182,7 @@ main {
 /* Контейнер формы */
 .contact-form {
   background: #222;               /* Темный фон */
-  padding: 2rem;                 /* Внутренние отступы */
+  padding: 1rem;                 /* Внутренние отступы */
   border-radius: 12px;           /* Скругление углов */
   box-shadow: 0 0 15px var(--red); /* Тень с красным оттенком */
   color: var(--text);            /* Цвет текста */
@@ -197,7 +197,7 @@ main {
   text-align: center;
   margin-bottom: 1.5rem;
   font-weight: 700;
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 
 /* Метки к полям */
@@ -233,8 +233,22 @@ main {
   background: #2a2a2a;
 }
 
-/* Кнопка отправки */
 .contact-form button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--red);
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: var(--purple);
+}
+
+/* Кнопка отправки */
+/*.contact-form button {
   background: linear-gradient(to right, var(--red), var(--purple));
   color: #fff;
   border: none;
@@ -247,9 +261,9 @@ main {
   display: block;
   margin: 0 auto;
   width: fit-content;
-}
+}*/
 
 /* Эффект наведения на кнопку */
-.contact-form button:hover {
+/*.contact-form button:hover {
   background: linear-gradient(to right, var(--purple), var(--red));
-}
+}*/
