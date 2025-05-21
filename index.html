@@ -6,10 +6,11 @@
   <title>Home | GameDev Portfolio</title>
   <style>
     :root {
-      --main-color: #cc0000;
+      --main-color: #e50914;
       --text-color: #ffffff;
-      --bg-color: #1a1a1a;
-      --transition: 0.4s ease;
+      --bg-color: #121212;
+      --accent-color: #ff4b4b;
+      --transition: 0.3s ease-in-out;
     }
 
     * {
@@ -22,45 +23,89 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
     }
 
     header {
       background-color: var(--main-color);
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     nav {
       display: flex;
       justify-content: space-between;
-      flex-wrap: wrap;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     nav h1 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
     }
 
     .nav-links a {
       margin-left: 1.5rem;
-      color: var(--text-color);
       text-decoration: none;
-      font-weight: bold;
-      transition: color var(--transition);
+      color: var(--text-color);
+      font-weight: 600;
+      transition: color var(--transition), transform var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: var(--text-color);
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease-in-out;
     }
 
     .nav-links a:hover {
-      color: #ffaaaa;
+      color: var(--accent-color);
+      transform: translateY(-2px);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
     }
 
     main {
       padding: 4rem 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
+      text-align: center;
     }
 
     h2 {
-      color: var(--main-color);
+      font-size: 2.5rem;
       margin-bottom: 1rem;
+      color: var(--accent-color);
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #dddddd;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    footer {
+      margin-top: 4rem;
+      padding: 1rem;
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
@@ -70,7 +115,6 @@
       }
 
       .nav-links {
-        display: flex;
         flex-direction: column;
         margin-top: 1rem;
       }
@@ -84,7 +128,7 @@
 <body>
   <header>
     <nav>
-      <h1>My GameDev Portfolio</h1>
+      <h1>GameDev Portfolio</h1>
       <div class="nav-links">
         <a href="index.html">About me</a>
         <a href="games.html">Games</a>
@@ -96,4 +140,11 @@
 
   <main>
     <h2>Welcome!</h2>
-    <p>Добро пожаловать в моё портфолио разработчицы
+    <p>Добро пожаловать в моё портфолио разработчицы игр. Здесь вы найдёте мои проекты, идеи и визуальное искусство.</p>
+  </main>
+
+  <footer>
+    © 2025 DobJalo | GameDev Portfolio
+  </footer>
+</body>
+</html>
