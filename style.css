@@ -1,102 +1,62 @@
 /* Определяем CSS переменные (custom properties) для цветов и переходов */
 :root {
-  --bg: #1a1a1a;          /* Темно-серый фон для сайта */
-  --red: #ff2a2a;         /* Ярко-красный цвет акцентов */
-  --purple: #a044ff;      /* Фиолетовый цвет акцентов */
-  --text: #eaeaea;        /* Светло-серый цвет текста */
-  --transition: 0.4s ease; /* Время и плавность переходов */
+  --bg: #0e0e0e;           /* Темный фон страницы */
+  --red: #ff2a2a;          /* Ярко-красный цвет акцента */
+  --purple: #a044ff;       /* Фиолетовый цвет акцента */
+  --text: #eaeaea;         /* Светло-серый цвет текста */
+  --transition: 0.4s ease; /* Время и плавность переходов анимаций */
 }
 
-/* Основные стили для всего документа */
+/* Основные стили для тела документа */
 body {
-  background: var(--bg);  /* Устанавливаем фон из переменной */
-  color: var(--text);     /* Цвет текста из переменной */
-  font-family: 'Exo 2', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Основной шрифт — «Exo 2» (футуристический), с запасными системными */
-  margin: 0;              /* Убираем стандартные отступы браузера */
+  background: var(--bg);   /* Фон из переменной */
+  color: var(--text);      /* Цвет текста */
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Используем Orbitron и запасные системные шрифты */
+  margin: 0;               /* Убираем отступы браузера */
 }
 
-/* Стили для верхнего блока сайта (хедера) */
+/* Стили для верхнего блока - хедера */
 header {
   background: linear-gradient(to right, var(--red), var(--purple));
-  /* Градиентный фон слева направо от красного к фиолетовому */
-  padding: 1rem 2rem;     /* Внутренние отступы: 1rem сверху/снизу, 2rem слева/справа */
+  /* Градиентный фон от красного к фиолетовому слева направо */
+  padding: 1rem 2rem;      /* Отступы вокруг содержимого */
 }
 
-/* Навигационная панель */
+/* Навигация — flex-контейнер */
 nav {
-  display: flex;           /* Используем flexbox для расположения элементов */
-  justify-content: space-between; /* Максимально раздвигаем элементы по краям */
-  align-items: center;     /* Вертикальное выравнивание по центру */
-  flex-wrap: wrap;         /* Позволяем строкам переноситься, если мало места */
+  display: flex;               /* Используем flexbox */
+  justify-content: space-between; /* Распределяем пространство между элементами */
+  align-items: center;         /* Вертикальное выравнивание по центру */
+  flex-wrap: wrap;             /* Позволяем элементам переноситься при нехватке места */
 }
 
-/* Заголовки h1 и h2 — одинаковые шрифты и жирность */
-h1, h2 {
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Шрифт «Orbitron» — футуристический, жирный */
-  font-weight: 700;        /* Жирное начертание */
-}
-
-/* Отдельные стили для h1 */
+/* Заголовок h1 */
 h1 {
-  font-size: 3rem;         /* Размер шрифта */
-  letter-spacing: 1px;     /* Интервал между буквами чуть увеличен */
-  margin: 0;               /* Убираем отступы вокруг */
+  font-size: 2rem;         /* Размер шрифта */
+  letter-spacing: 1px;     /* Промежуток между буквами */
+  font-weight: bold;       /* Жирный шрифт */
 }
 
-/* Стили для блока заголовка с подзаголовком */
-.header-title {
-  text-align: center;
-}
-
-.header-title h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, var(--red), var(--purple));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  text-shadow:
-    0 0 5px var(--red),
-    0 0 10px var(--red),
-    0 0 20px var(--purple),
-    0 0 30px var(--purple);
-  margin: 0 auto;
-  max-width: max-content;
-}
-
-.subtitle {
-  font-size: 1rem;
-  color: var(--purple);
-  margin-top: 0.2rem;
-  font-weight: 400;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-/* Класс для подсветки текста фиолетовым цветом */
+/* Класс для выделенного текста (в заголовке) */
 .highlight {
-  color: var(--purple);
+  color: var(--purple);    /* Фиолетовый цвет */
 }
 
 /* Стили для ссылок в навигации */
 .nav-links a {
-  margin-left: 2rem;       /* Отступ слева, чтобы разделить ссылки */
-  font-size: 1.2rem;       /* Размер шрифта для ссылок */
-  color: var(--text);      /* Цвет текста из переменной */
-  text-decoration: none;   /* Убираем стандартное подчеркивание */
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 700;        /* Жирный шрифт, как и заголовки */
-  position: relative;      /* Для позиционирования псевдоэлемента ::after */
+  margin-left: 2rem;       /* Отступ слева между ссылками */
+  font-size: 1.2rem;       /* Размер шрифта увеличен */
+  color: var(--text);      /* Цвет текста */
+  text-decoration: none;   /* Убираем подчеркивание */
+  font-weight: bold;       /* Жирный шрифт */
+  position: relative;      /* Для позиционирования псевдоэлемента */
   transition: color var(--transition); /* Плавное изменение цвета при наведении */
 }
 
-/* Добавляем декоративную полоску под ссылкой через псевдоэлемент */
+/* Декоративная полоска под ссылкой */
 .nav-links a::after {
-  content: "";             /* Пустое содержимое — декоративный элемент */
+  content: "";             /* Пустой контент, используется как графический элемент */
   position: absolute;      /* Абсолютное позиционирование относительно ссылки */
   left: 0;
   bottom: -6px;            /* На 6 пикселей ниже текста */
@@ -104,74 +64,78 @@ h1 {
   height: 3px;             /* Толщина полоски */
   background: linear-gradient(90deg, var(--red), var(--purple));
   /* Градиент полоски */
-  box-shadow: 0 0 8px var(--red); /* Тень с красным свечением */
-  opacity: 0;              /* Изначально скрыта */
-  transform: scaleX(0);    /* Сжата по ширине (невидима) */
+  box-shadow: 0 0 8px var(--red);
+  /* Тень с красным свечением */
+  opacity: 0;              /* Изначально невидима */
+  transform: scaleX(0);    /* Сжата по ширине */
   transition: transform var(--transition), opacity var(--transition);
-  border-radius: 4px;      /* Закругленные края полоски */
+  border-radius: 4px;      /* Закругленные края */
 }
 
-/* При наведении мыши на ссылку меняем цвет */
+/* При наведении на ссылку меняем цвет */
 .nav-links a:hover {
-  color: var(--red);
+  color: var(--red);       /* Красный цвет текста */
 }
 
-/* При наведении — показываем полоску снизу с анимацией */
+/* При наведении показываем полоску снизу */
 .nav-links a:hover::after {
   opacity: 1;              /* Делает полоску видимой */
-  transform: scaleX(1);    /* Разворачивает полоску на полную ширину */
+  transform: scaleX(1);    /* Расширяем полоску на полную ширину */
 }
 
 /* Основной контент страницы */
 main {
-  padding: 4rem 2rem;      /* Отступы вокруг */
-  text-align: center;      /* Текст выравниваем по центру */
+  padding: 4rem 2rem;      /* Отступы сверху/снизу и слева/справа */
+  text-align: center;      /* Выравнивание текста по центру */
 }
 
 /* Заголовок во вводном разделе */
 .intro h2 {
-  font-size: 2.5rem;       /* Крупный шрифт */
+  font-size: 2.5rem;       /* Крупный размер шрифта */
   color: var(--red);       /* Красный цвет */
   margin-bottom: 0.5rem;   /* Отступ снизу */
 }
 
-/* Абзац во вводном разделе */
+/* Параграф во вводном разделе */
 .intro p {
-  font-size: 1.2rem;
-  color: var(--purple);
-  font-weight: 400;        /* Нормальная жирность */
+  font-size: 1.2rem;       /* Средний размер шрифта */
+  color: var(--purple);    /* Фиолетовый цвет */
 }
 
-/* Иконки технологий (текст) */
+/* Иконка с технологиями */
 .tech-icon {
-  margin-top: 1rem;
-  font-size: 1rem;
-  color: #999;             /* Серый цвет для менее важного текста */
+  margin-top: 1rem;        /* Отступ сверху */
+  font-size: 1rem;         /* Размер шрифта */
+  color: #999;             /* Светло-серый цвет */
 }
 
-/* Блок с проектами */
+/* Контейнер с проектами */
 .projects {
-  margin-top: 4rem;
-  display: flex;           /* Flexbox для удобного расположения */
-  justify-content: center; /* Центрируем проекты по горизонтали */
-  gap: 2rem;               /* Расстояние между проектами */
+  margin-top: 4rem;        /* Отступ сверху */
+  display: flex;           /* Flexbox для расположения */
+  justify-content: center; /* Центрируем по горизонтали */
+  gap: 2rem;               /* Отступы между проектами */
   flex-wrap: wrap;         /* Перенос строк при нехватке места */
 }
 
 /* Картинки проектов */
 .projects img {
   width: 220px;            /* Фиксированная ширина */
-  height: auto;            /* Высота пропорциональна */
+  height: auto;            /* Автоматическая высота */
   border-radius: 12px;     /* Закругленные углы */
   box-shadow: 0 0 15px var(--red); /* Красное свечение */
   transition: transform var(--transition), box-shadow var(--transition);
   /* Плавное появление эффекта при наведении */
 }
 
-/* Нижний колонтитул сайта */
-footer {
-  text-align: center;      /* Текст по центру */
-  padding: 2rem;           /* Отступы внутри */
-  color: #777;             /* Серый цвет для менее яркого текста */
-  font-size: 0.9rem;       /* Немного меньше стандартного */
+/* Эффект при наведении на картинки проектов */
+.projects img:hover {
+  transform: scale(1.05);  /* Легкое увеличение */
+  box-shadow: 0 0 25px var(--purple); /* Фиолетовое свечение */
 }
+
+/* Подвал сайта */
+footer {
+  text-align: center;      /* Центрируем текст */
+  padding: 2rem;           /* Отступы внутри */
+  color:
