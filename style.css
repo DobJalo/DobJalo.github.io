@@ -159,50 +159,54 @@ main {
   background-color: var(--purple);
 }
 
-/*CONTACT FORM*/
+/* Контейнер всей формы */
 .contact-form {
-  max-width: 600px;
-  margin: 4rem auto;
-  background: #222;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 0 15px var(--red);
-  color: var(--text);
+  max-width: 600px;                /* Максимальная ширина блока */
+  margin: 4rem auto;               /* Отступ сверху и снизу, выравнивание по центру */
+  background: #222;                /* Темный фон */
+  padding: 2rem;                   /* Внутренние отступы */
+  border-radius: 12px;             /* Скругление углов */
+  box-shadow: 0 0 15px var(--red); /* Тень с красным оттенком */
+  color: var(--text);              /* Цвет текста (из переменной) */
 }
 
+/* Заголовок формы */
 .contact-form h2 {
-  text-align: center;
-  color: var(--red);
-  margin-bottom: 1rem;
+  text-align: center;    /* Выравнивание по центру */
+  color: var(--red);     /* Красный цвет заголовка */
+  margin-bottom: 1rem;   /* Отступ снизу */
 }
 
+/* Стили для полей ввода и текстового поля */
 .contact-form input,
 .contact-form textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
-  border: none;
-  margin-top: 0.5rem;
-  background: #333;
-  color: var(--text);
-  font-family: inherit;
+  width: 100%;             /* Растягивание по ширине */
+  padding: 0.75rem;        /* Внутренние отступы */
+  border-radius: 8px;      /* Скругление углов */
+  border: none;            /* Без границ */
+  margin-top: 0.5rem;      /* Отступ сверху */
+  background: #333;        /* Темный фон полей */
+  color: var(--text);      /* Цвет текста */
+  font-family: inherit;    /* Наследовать шрифт сайта */
 }
 
+/* Кнопка отправки */
 .contact-form button {
-  background: linear-gradient(to right, var(--red), var(--purple));
-  color: #fff;
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background var(--transition);
-  display: block;
-  margin: 1rem auto 0;
+  background: linear-gradient(to right, var(--red), var(--purple)); /* Градиентный фон */
+  color: #fff;                 /* Белый текст */
+  border: none;                /* Без границы */
+  padding: 0.75rem 1.5rem;     /* Отступы внутри кнопки */
+  border-radius: 8px;          /* Скругление углов */
+  font-size: 1rem;             /* Размер шрифта */
+  cursor: pointer;            /* Курсор "рука" при наведении */
+  transition: background var(--transition); /* Плавный переход при наведении */
+  display: block;              /* Блочный элемент */
+  margin: 1rem auto 0;         /* Центровка кнопки */
 }
 
+/* Эффект при наведении на кнопку */
 .contact-form button:hover {
-  background: linear-gradient(to right, var(--purple), var(--red));
+  background: linear-gradient(to right, var(--purple), var(--red)); /* Обратный градиент */
 }
 
 
