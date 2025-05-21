@@ -159,10 +159,10 @@ main {
 }
 
 /* Подвал сайта */
-footer {
+/*footer {
   background: #111; /* Темный фон */
-  color: #666;      /* Серый текст */
-  padding: 1rem 0;
+  /*color: #666; */     /* Серый текст */
+ /* padding: 1rem 0;
   text-align: center;
   font-size: 0.9rem;
-}
+}*/
