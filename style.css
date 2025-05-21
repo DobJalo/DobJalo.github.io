@@ -1,4 +1,4 @@
-/* Определяем CSS переменные (custom properties) для цветов и переходов */
+/* Определяем CSS переменные для цветов и переходов */
 :root {
   --bg: #0e0e0e;           /* Темный фон страницы */
   --red: #ff2a2a;          /* Ярко-красный цвет акцента */
@@ -41,6 +41,20 @@ h1 {
 /* Класс для выделенного текста (в заголовке) */
 .highlight {
   color: var(--purple);    /* Фиолетовый цвет */
+}
+
+/* Уменьшаем промежуток между NAME SURNAME и Game Development portfolio */
+.header-title h1 {
+  margin-bottom: 0.2rem; /* чуть меньше отступа снизу */
+}
+
+/* Стили для подзаголовка портфолио */
+.header-title .subtitle {
+  font-size: 1.4rem; /* чуть больше размер шрифта */
+  color: var(--purple); /* фиолетовый цвет */
+  margin-top: 0; /* убираем верхний отступ */
+  font-weight: 600; /* чуть жирнее */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* простой шрифт */
 }
 
 /* Стили для ссылок в навигации */
@@ -100,7 +114,7 @@ main {
 .intro p {
   font-size: 1.2rem;       /* Средний размер шрифта */
   color: var(--purple);    /* Фиолетовый цвет */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /*ТУТ*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* более простой шрифт */
 }
 
 /* Иконка с технологиями */
@@ -131,12 +145,23 @@ main {
 
 /* Эффект при наведении на картинки проектов */
 /*.projects img:hover {*/
-  /*transform: scale(1.05); */ /* Легкое увеличение */
-  /*box-shadow: 0 0 25px var(--purple);*/ /* Фиолетовое свечение */
+/*  transform: scale(1.05); */ /* Легкое увеличение */
+/*  box-shadow: 0 0 25px var(--purple);*/ /* Фиолетовое свечение */
 /*}*/
+
+/* Меняем шрифт у "Creating unique gaming experiences" */
+.projects p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* простой, легко читаемый шрифт */
+  font-size: 1.1rem; /* удобный размер */
+  color: var(--text); /* цвет текста (светло-серый) */
+  margin-top: 0; /* убираем верхний отступ */
+}
 
 /* Подвал сайта */
 footer {
-  text-align: center;      /* Центрируем текст */
-  padding: 2rem;           /* Отступы внутри */
-  color:
+  background: #111; /* Темный фон */
+  color: #666;      /* Серый текст */
+  padding: 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
