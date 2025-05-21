@@ -155,7 +155,7 @@ main {
   box-shadow: 0 0 15px var(--red);
   transition: transform var(--transition), box-shadow var(--transition);
 }
-.projects img_game a:hover{
+.projects img_game a::after{
   box-shadow: 0 0 15px var(--purple);
 }
 
