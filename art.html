@@ -3,15 +3,90 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Me | GameDev Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Home | GameDev Portfolio</title>
+  <style>
+    :root {
+      --main-color: #cc0000;
+      --text-color: #ffffff;
+      --bg-color: #1a1a1a;
+      --transition: 0.4s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    header {
+      background-color: var(--main-color);
+      padding: 1rem 2rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: #ffaaaa;
+    }
+
+    main {
+      padding: 4rem 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--main-color);
+      margin-bottom: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      .nav-links a {
+        margin: 0.5rem 0;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <nav>
       <h1>My GameDev Portfolio</h1>
       <div class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="about.html">About me</a>
         <a href="games.html">Games</a>
         <a href="art.html">Art</a>
         <a href="contact.html">Contact</a>
@@ -20,8 +95,5 @@
   </header>
 
   <main>
-    <h2>About Me</h2>
-    <p>Я увлечена созданием игр, визуальным стилем и атмосферой. Работаю с Unity, создаю свои 2D и 3D проекты.</p>
-  </main>
-</body>
-</html>
+    <h2>Welcome!</h2>
+    <p>Добро пожаловать в моё портфолио разработчицы
