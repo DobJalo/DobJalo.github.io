@@ -2,98 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | GameDev Portfolio</title>
-  <style>
-    :root {
-      --main-color: #cc0000;
-      --text-color: #ffffff;
-      --bg-color: #1a1a1a;
-      --transition: 0.4s ease;
-    }
+  <!-- Установка кодировки документа -->
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
+  <!-- Отвечает за адаптивность сайта на мобильных устройствах -->
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
+  <title>NAME SURNAME - Game Developer Portfolio</title>
+  <!-- Заголовок страницы во вкладке браузера -->
 
-    header {
-      background-color: var(--main-color);
-      padding: 1rem 2rem;
-    }
+  <link rel="stylesheet" href="style.css" />
+  <!-- Подключение внешнего CSS-файла -->
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    nav h1 {
-      font-size: 1.5rem;
-    }
-
-    .nav-links a {
-      margin-left: 1.5rem;
-      color: var(--text-color);
-      text-decoration: none;
-      font-weight: bold;
-      transition: color var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: #ffaaaa;
-    }
-
-    main {
-      padding: 4rem 2rem;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    h2 {
-      color: var(--main-color);
-      margin-bottom: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-direction: column;
-        margin-top: 1rem;
-      }
-
-      .nav-links a {
-        margin: 0.5rem 0;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Подключение шрифта Orbitron из Google Fonts -->
 </head>
 <body>
+  <!-- Хедер с фиксированным позиционированием -->
   <header>
     <nav>
-      <h1>My GameDev Portfolio</h1>
+      <!-- Левая часть: заголовок -->
+      <div class="header-title">
+        <h1>NAME <span class="highlight">SURNAME</span></h1>
+        <p class="subtitle">Game Developer Portfolio</p>
+      </div>
+
+      <!-- Правая часть: навигационные ссылки -->
       <div class="nav-links">
-        <a href="index.html">About me</a>
+        <a href="DobJalo.github.io">About me</a>
         <a href="games.html">Games</a>
-        <a href="art.html">Art</a>
-        <a href="contact.html">Contact</a>
+        <a href="art.html">3D models</a>
       </div>
     </nav>
   </header>
 
+  <!-- Основной контент сайта -->
   <main>
-    <h2>Welcome!</h2>
-    <p>Добро пожаловать в моё портфолио разработчицы
+    <section class="intro">
+      <h2>Games</h2>
+    </section>
+
+    <section class="projects">
+      <div class="text-block">
+        <p>My name is NAME SURNAME.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <div style="height: 3rem;"></div>
+        <p>Email to contact me: <a href="mailto:your@email.com">your@email.com</a></p>
+    <div style="height: 3rem;"></div>
+        <a href="Name_Surname_CV.pdf" target="_blank" class="pdf-button">View Resume</a>
+          <div style="height: 3rem;"></div>
+      </div>
+      <img src="myimage.jpg" alt="My Image">
+    </section>
+    
+  </main>
+
+
+
+</body>
+</html>
