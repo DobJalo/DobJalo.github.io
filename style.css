@@ -159,6 +159,53 @@ main {
   background-color: var(--purple);
 }
 
+/*CONTACT FORM*/
+.contact-form {
+  max-width: 600px;
+  margin: 4rem auto;
+  background: #222;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--red);
+  color: var(--text);
+}
+
+.contact-form h2 {
+  text-align: center;
+  color: var(--red);
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  margin-top: 0.5rem;
+  background: #333;
+  color: var(--text);
+  font-family: inherit;
+}
+
+.contact-form button {
+  background: linear-gradient(to right, var(--red), var(--purple));
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background var(--transition);
+  display: block;
+  margin: 1rem auto 0;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(to right, var(--purple), var(--red));
+}
+
+
 /* При наведении на картинку (если нужно) */
 /*
 .projects img:hover {
