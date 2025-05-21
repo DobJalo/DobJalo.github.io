@@ -21,7 +21,7 @@ header {
   position: fixed;  /* фиксируем сверху */
   top: 0;
   left: 0;
-  width: 100%;     /* чтобы занимал всю ширину */
+  /*width: 100%;*/     /* чтобы занимал всю ширину */
   background: linear-gradient(to right, var(--red), var(--purple));
   padding: 1rem;   /* например */
   z-index: 1000;   /* чтобы был сверху остальных элементов */
