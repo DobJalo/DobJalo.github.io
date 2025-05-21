@@ -193,7 +193,7 @@ main {
 
 /* Заголовок формы */
 .contact-form h2 {
-  color: var(--red);
+  color: var(--purple);
   text-align: center;
   margin-bottom: 1.5rem;
   font-weight: 700;
@@ -218,7 +218,8 @@ main {
   background: #333;
   color: var(--text);
   font-size: 1rem;
-  font-family: inherit;
+  /*font-family: inherit;*/
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   resize: none; /* Запрет изменения размера textarea */
   margin-bottom: 1.2rem;
   box-sizing: border-box;
