@@ -1,90 +1,52 @@
 <!DOCTYPE html>
-<!-- Объявление типа документа: HTML5 -->
 <html lang="en">
-<!-- Открываем тег html с указанием языка страницы -->
-
 <head>
-  <!-- Метаинформация о странице -->
   <meta charset="UTF-8" />
-  <!-- Кодировка документа — UTF-8, чтобы поддерживать любые символы -->
-  
+  <!-- Установка кодировки документа -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <!-- Адаптивность для мобильных устройств:
-       устанавливает ширину в зависимости от ширины экрана -->
-  
-  <title>Name Surname - Game Developer Portfolio</title>
-  <!-- Заголовок страницы, который отображается во вкладке браузера -->
-  
+  <!-- Отвечает за адаптивность сайта на мобильных устройствах -->
+  <title>Game Developer Portfolio</title>
+  <!-- Заголовок вкладки браузера -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Подключаем внешний CSS-файл со стилями -->
-  
-  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&family=Orbitron:wght@700&display=swap" rel="stylesheet" />
-  <!-- Подключаем шрифты Exo 2 и Orbitron с Google Fonts -->
+  <!-- Подключение внешнего CSS файла -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Подключение шрифта Orbitron из Google Fonts -->
 </head>
-
 <body>
-  <!-- Основное тело страницы — то, что видит пользователь -->
-  
   <header>
-    <!-- Верхняя часть сайта — обычно содержит навигацию и логотип -->
-    
     <nav>
-      <!-- Навигационное меню -->
-      
-      <div class="header-title">
-  <h1>Name Surname</h1>
-  <p class="subtitle">Game Developer Portfolio</p>
-</div>
-
-      <!-- Главный заголовок сайта.
-           Текст выделен классом highlight для окраски -->
-      
+      <h1>GAME <span class="highlight">DEVELOPER</span></h1>
+      <!-- Основной заголовок сайта с выделением слова "DEVELOPER" -->
       <div class="nav-links">
-        <!-- Контейнер для ссылок навигации -->
-        
+        <!-- Навигационные ссылки -->
         <a href="index.html">About</a>
-        <!-- Ссылка на главную/о себе страницу -->
-        
         <a href="games.html">Games</a>
-        <!-- Ссылка на страницу с играми -->
-        
         <a href="art.html">Art</a>
-        <!-- Ссылка на страницу с артами -->
-        
         <a href="contact.html">Contact</a>
-        <!-- Ссылка на страницу контактов -->
       </div>
     </nav>
   </header>
 
   <main>
-    <!-- Основной контент страницы -->
-    
     <section class="intro">
       <!-- Вводный раздел с описанием -->
-      
       <h2>Independent & Innovative</h2>
-      <!-- Второстепенный заголовок раздела -->
-      
       <p>Creating unique gaming experiences</p>
-      <!-- Краткий описательный текст -->
-      
       <div class="tech-icon">⚙️ Unity • C# • GitHub</div>
-      <!-- Значки или текст с перечислением технологий -->
+      <!-- Иконка и перечисление технологий -->
     </section>
 
     <section class="projects">
-      <!-- Раздел с проектами -->
-      
-      <img src="myimage.png" alt="myimage">
-      <!-- Изображение проекта. 
-           Атрибут alt — текст, показываемый если картинка не загрузилась -->
+      <!-- Раздел с проектами (превью картинок) -->
+      <img src="project1.png" alt="Project 1">
+      <img src="project2.png" alt="Project 2">
+      <img src="project3.png" alt="Project 3">
     </section>
   </main>
 
-  
-
+  <footer>
+    <p>© 2025 by DobJalo. All rights reserved.</p>
+    <!-- Подвал сайта с копирайтом -->
   </footer>
 </body>
-
 </html>
