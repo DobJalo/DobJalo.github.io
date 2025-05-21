@@ -23,7 +23,7 @@ header {
   left: 0;
   right: 0;              /* вместо width: 100% — чтобы растянуть по всей ширине без сдвигов */
   background: linear-gradient(to right, var(--red), var(--purple));
-  padding: 1rem;
+  padding: 0.2rem 0.5rem;
   box-sizing: border-box; /* учитываем padding в ширине */
   z-index: 1000;         /* чтобы был поверх остальных элементов */
 }
