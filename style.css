@@ -1,4 +1,4 @@
-/* === Цветовые переменные и плавные переходы === */
+/* === Цветовые переменные и переходы === */
 :root {
   --bg: #181818;           /* Темный фон страницы */
   --red: #ff2a2a;          /* Ярко-красный цвет акцентов */
@@ -9,8 +9,8 @@
 
 /* === Базовые стили для body === */
 body {
-  background: var(--bg); /* Фон страницы */
-  color: var(--text);    /* Цвет текста */
+  background: var(--bg);
+  color: var(--text);
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
@@ -19,20 +19,20 @@ body {
 
 /* === Стили для фиксированного хедера === */
 header {
-  position: fixed;           /* Фиксируем шапку сверху */
+  position: fixed;           /* Закрепляем сверху */
   top: 0;
   left: 0;
   right: 0;
   background: linear-gradient(to right, var(--red), var(--purple));
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem;     /* Внутренние отступы */
   box-sizing: border-box;
-  z-index: 1000;             /* Поверх всего контента */
+  z-index: 1000;             /* Поверх всего */
 }
 
 /* Контейнер внутри header */
 nav {
   display: flex;
-  justify-content: space-between; /* Разместить элементы по краям */
+  justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -42,7 +42,8 @@ nav {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
-  margin: 0 0 0.2rem 0;
+  margin: 0;
+  margin-bottom: 0.2rem;
 }
 
 /* Подзаголовок */
@@ -53,12 +54,12 @@ nav {
   color: var(--text);
 }
 
-/* Выделение фиолетовым цветом */
+/* Выделение фиолетовым */
 .highlight {
   color: var(--purple);
 }
 
-/* Ссылки навигации */
+/* Ссылки в навигации */
 .nav-links a {
   margin-left: 4rem;
   font-size: 1.2rem;
@@ -69,7 +70,7 @@ nav {
   transition: color var(--transition);
 }
 
-/* Подчеркивание ссылок при наведении */
+/* Подчеркивание при наведении */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -96,119 +97,141 @@ nav {
 
 /* === Основной контент main === */
 main {
-  padding-top: 6rem;       /* Отступ сверху, чтобы не налезал под header */
+  padding-top: 6rem;       /* Отступ сверху, чтобы не залезал под header */
   padding-left: 1rem;
   padding-right: 1rem;
   text-align: center;
 }
 
-/* Секция с заголовком Contact */
+/* Блок intro */
 .intro h2 {
   font-size: 2.5rem;
   color: var(--red);
   margin-bottom: 1rem;
 }
 
-/* ОБЕРТКА для текста и формы — флекс-контейнер */
-.contact-wrapper {
-  display: flex;                    /* Горизонтальное размещение */
-  justify-content: space-between;  /* Максимальный отступ между колонками */
-  gap: 4rem;                       /* Расстояние между текстом и формой */
-  max-width: 1200px;               /* Максимальная ширина */
-  margin: 4rem auto;               /* Отступ сверху и центрирование */
-  padding: 0 1rem;                 /* Отступы слева и справа */
-  box-sizing: border-box;
-  align-items: flex-start;         /* Выравнивание по верхнему краю */
-  text-align: left;                /* Выравнивание текста по левому краю */
-}
-
-/* Левая колонка — текст */
-.text-block {
-  flex: 1 1 50%;                  /* Занимает около 50% ширины */
-  color: var(--text);
+/* Параграф в intro (если появится) */
+.intro p {
   font-size: 1.2rem;
-  line-height: 1.5;
+  color: var(--purple);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Правая колонка — форма обратной связи */
-.contact-form {
-  flex: 1 1 40%;                  /* Занимает около 40% ширины */
-  background: #222;               /* Темный фон */
-  padding: 2rem;                  /* Внутренние отступы */
-  border-radius: 12px;            /* Скругленные углы */
-  box-shadow: 0 0 20px var(--red); /* Тень с красным оттенком */
-  color: var(--text);             /* Цвет текста */
-  box-sizing: border-box;
-  max-width: 600px;               /* Максимальная ширина формы */
+/* Секция проектов */
+.projects {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-/* Заголовок формы */
-.contact-form h2 {
-  text-align: center;
-  color: var(--red);
-  margin-bottom: 1.5rem;
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-/* Стили для полей input и textarea */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;                  /* Поля растягиваются по ширине контейнера */
-  padding: 0.85rem;             /* Внутренние отступы */
-  border-radius: 8px;           /* Скругленные углы */
-  border: none;                 /* Без рамок */
-  margin-top: 0.5rem;           /* Отступ сверху */
-  background: #333;             /* Темный фон полей */
-  color: var(--text);           /* Светлый текст */
-  font-family: inherit;         /* Наследуем шрифт */
-  font-size: 1rem;
-  resize: vertical;             /* Для textarea разрешаем менять высоту */
-}
-
-/* Кнопка отправки формы */
-.contact-form button {
-  background: linear-gradient(135deg, var(--red), var(--purple)); /* Градиент */
-  color: white;
-  border: none;
-  padding: 1rem 2rem;
-  border-radius: 12px;
+/* Текст о проектах */
+.projects p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition:
-    background 0.4s ease,
-    box-shadow 0.3s ease,
-    transform 0.2s ease;
-  display: block;
-  margin: 2rem auto 0;          /* Центрирование с отступом сверху */
-  box-shadow: 0 4px 15px rgba(255, 42, 42, 0.6); /* Тень */
-  width: 100%;                  /* Растягиваем по ширине */
-  max-width: 300px;             /* Максимальная ширина кнопки */
-  text-align: center;
+  color: var(--text);
+  margin: 0;
+  flex-basis: 100%;
 }
 
-/* Эффект при наведении на кнопку */
-.contact-form button:hover {
-  background: linear-gradient(135deg, var(--purple), var(--red));
-  box-shadow: 0 6px 25px rgba(160, 68, 255, 0.8);
-  transform: translateY(-3px);
+/* Контейнер с текстом и формой — flex контейнер для выравнивания по горизонтали */
+.contact-wrapper {
+  display: flex;                    /* Горизонтальное расположение */
+  flex-direction: row;              /* Явно указываем расположение по строке */
+  justify-content: space-between;  /* Разделяем колонки */
+  gap: 4rem;                       /* Отступ между колонками */
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+  align-items: flex-start;
+  text-align: left;
 }
 
-/* === Адаптивность для экранов <= 900px === */
+/* === Адаптивность для экранов <= 900px - колонки в столбец === */
 @media (max-width: 900px) {
   .contact-wrapper {
-    flex-direction: column; /* Колонки становятся блоками друг под другом */
-    gap: 2rem;              /* Уменьшаем расстояние между блоками */
+    flex-direction: column; /* На маленьких экранах колонки будут одна под другой */
+    gap: 2rem;
     margin: 2rem auto;
   }
   .text-block,
   .contact-form {
-    flex: 1 1 100%;         /* Занимают всю ширину контейнера */
+    flex: 1 1 100%;
     max-width: 100%;
   }
   .contact-form button {
-    max-width: 100%;        /* Кнопка растягивается на всю ширину */
+    max-width: 100%;
   }
+}
+
+/* Текстовые блоки внутри контактного блока */
+.text-block {
+  flex: 1;
+  font-size: 1.2rem;
+  color: var(--text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* Стили для самой формы обратной связи */
+.contact-form {
+  flex: 1;
+  max-width: 600px;                /* Максимальная ширина блока */
+  background: #222;                /* Темный фон */
+  padding: 2rem;                   /* Внутренние отступы */
+  border-radius: 12px;             /* Скругление углов */
+  box-shadow: 0 0 15px var(--red); /* Тень с красным оттенком */
+  color: var(--text);              /* Цвет текста */
+}
+
+/* Заголовок формы */
+.contact-form h2 {
+  text-align: center;    /* Выравнивание по центру */
+  color: var(--red);     /* Красный цвет заголовка */
+  margin-bottom: 1rem;   /* Отступ снизу */
+}
+
+/* Стили для полей ввода и текстового поля */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;             /* Растягивание по ширине */
+  padding: 0.75rem;        /* Внутренние отступы */
+  border-radius: 8px;      /* Скругление углов */
+  border: none;            /* Без границ */
+  margin-top: 0.5rem;      /* Отступ сверху */
+  background: #333;        /* Темный фон полей */
+  color: var(--text);      /* Цвет текста */
+  font-family: inherit;    /* Наследовать шрифт сайта */
+  resize: vertical;        /* Разрешаем менять высоту textarea */
+}
+
+/* Кнопка Send, стилизованная как кнопка View Resume */
+.contact-form button {
+  background: linear-gradient(135deg, #ff2a2a, #a044ff);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 0 20px #ff2a2a;
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.3s ease;
+  display: block;
+  margin: 2rem auto 0;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+}
+
+/* При наведении - инверсия градиента и усиление свечения */
+.contact-form button:hover {
+  background: linear-gradient(135deg, #a044ff, #ff2a2a);
+  box-shadow: 0 0 30px #a044ff, 0 0 40px #ff2a2a;
+  transform: translateY(-3px);
 }
