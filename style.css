@@ -127,6 +127,13 @@ main {
   flex-wrap: wrap;                /* Поддержка адаптива */
 }
 
+/*Фиол текст заголовок*/
+.projects pur {
+  font-size: 1.2rem;
+  color: var(--purple);
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 /* Текст о проектах */
 .projects p {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
