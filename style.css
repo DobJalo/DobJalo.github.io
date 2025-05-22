@@ -196,6 +196,15 @@ main {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+a[href^="mailto:"] {
+  color: var(--purple);
+  text-decoration: none;
+}
+
+a[href^="mailto:"]:hover {
+  text-decoration: underline;
+}
+
 /* При наведении на картинку (если нужно) */
 /*
 .projects img:hover {
