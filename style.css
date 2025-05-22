@@ -161,7 +161,7 @@ main {
   height: 400px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 0 15px var(--red);
+  box-shadow: 0 0 35px var(--red);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 .projects img_game:hover {
