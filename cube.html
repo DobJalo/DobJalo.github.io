@@ -2,31 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Установка кодировки документа -->
-
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
-  <!-- Отвечает за адаптивность сайта на мобильных устройствах -->
-
   <title>NAME SURNAME - Game Developer Portfolio</title>
-  <!-- Заголовок страницы во вкладке браузера -->
 
+  <!-- Шрифт и стили -->
   <link rel="stylesheet" href="style.css" />
-  <!-- Подключение внешнего CSS-файла -->
-
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Подключение шрифта Orbitron из Google Fonts -->
 </head>
 <body>
-  <!-- Хедер с фиксированным позиционированием -->
+  <!-- Шапка сайта -->
   <header>
     <nav>
-      <!-- Левая часть: заголовок -->
       <div class="header-title">
         <h1>NAME <span class="highlight">SURNAME</span></h1>
         <p class="subtitle">Game Developer Portfolio</p>
       </div>
 
-      <!-- Правая часть: навигационные ссылки -->
       <div class="nav-links">
         <a href="DobJalo.github.io">About me</a>
         <a href="games.html">Games</a>
@@ -35,48 +25,43 @@
     </nav>
   </header>
 
-  <!-- Основной контент сайта -->
+  <!-- Основной контент -->
   <main>
     <section class="intro">
       <h2>cu8e</h2>
     </section>
 
-    <section class="projects">
-  <div class="text-block">
-    <pur>My name is NAME SURNAME.</pur>
-    <p>I develop video games.</p>
-    <p>I develop video games.</p>
-    <p>I develop video games.</p>
-  </div>
+    <!-- Контейнер с текстом слева и медиа справа -->
+    <section class="content-block">
+      <!-- Текстовая часть -->
+      <div class="text-block">
+        <p class="pur">My name is NAME SURNAME.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+      </div>
 
-  <div class="media-block">
-    <img src="images/myimage1.jpg" alt="My Image">
-  </div>
-      <div class="media-block">
-    <img src="images/myimage1.jpg" alt="My Image">
-  </div>
-</section>
-
-<section class="projects">
-
-
-  <div class="media-block">
-    <div class="video-wrapper">
-      <iframe width="500" height="280"
+      <!-- Медиа-блок -->
+      <div class="media-column">
+        <div class="media-block">
+          <img src="images/myimage1.jpg" alt="My Image">
+        </div>
+        <div class="media-block">
+          <img src="images/myimage1.jpg" alt="My Image">
+        </div>
+        <div class="media-block">
+          <div class="video-wrapper">
+            <iframe width="500" height="280"
               src="https://www.youtube.com/embed/abc123XYZ"
               title="Gameplay Video"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-</section>
-
-
-    
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </body>
 </html>
-<!-- <p>Creating unique gaming experiences</p>
-      <div class="tech-icon">⚙️ Unity • C# • GitHub</div>-->
