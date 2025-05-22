@@ -277,8 +277,8 @@ main {
 details {
   background-color: #1a1a1a;
   color: var(--purple);
-  border: 1px solid var(--red);
-  box-shadow: 0 0 15px var(--red);
+  border: 1px solid var(--purple);
+  box-shadow: 0 0 10px var(--purple);
   border-radius: 8px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -286,9 +286,7 @@ details {
   transition: all 0.3s ease;
 }
 
-.details:hover{
-box-shadow: 0 0 15px var(--purple;
-}
+
 
 details[open] {
   background-color: #2a2a2a;
