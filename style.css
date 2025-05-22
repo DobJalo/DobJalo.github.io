@@ -132,7 +132,7 @@ main {
 
 /*Фиол текст заголовок*/
 .projects pur {
-  text-align: left; /**/
+  text-align: center; /**/
   font-size: 1.2rem;
   color: var(--purple);
   font-weight: bold;
@@ -224,6 +224,7 @@ main {
     }*/
 
 .game-text p{
+  font-size: 1.1rem;
       flex: 1;
       max-width: 500px;
       text-align: left;
@@ -231,6 +232,7 @@ main {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 .game-text pur{
+  font-size: 1.2rem;
       flex: 1;
       max-width: 500px;
       text-align: left;
