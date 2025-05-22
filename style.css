@@ -157,7 +157,7 @@ main {
     
 /* Текст о проектах */
 .projects p {
-  color: var(--purple);
+  /*color: var(--purple);*/
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
   color: var(--text);
@@ -207,7 +207,7 @@ main {
 }
 
 .text-block {
-  /*color: var(--purple);*/
+  color: var(--purple);
   flex: 1;                         /* Занимает доступное пространство */
   max-width: 600px;               /* Ограничиваем ширину текста */
   text-align: left;               /* Выравнивание по левому краю */
