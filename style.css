@@ -68,7 +68,7 @@ nav {
   color: var(--text);
   position: relative;
   transition: color var(--transition);
-  text-shadow: 0 0 8px var(--red); /**/
+  text-shadow: 0 0 15px var(--red); /**/
 }
 
 /* Подчеркивание при наведении */
@@ -200,11 +200,11 @@ main {
 a[href^="mailto:"] {
   color: var(--purple);
   text-decoration: underline;
-  box-shadow: 0 0 20px var(--red);
+  text-shadow: 0 0 20px var(--red);
 }
 
 a[href^="mailto:"]:hover {
-  box-shadow: 0 0 20px var(--purple);
+  text-shadow: 0 0 20px var(--purple);
 }
 
 /* При наведении на картинку (если нужно) */
