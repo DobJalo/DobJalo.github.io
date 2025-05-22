@@ -211,7 +211,7 @@ a[href^="mailto:"]:hover {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  gap: 0.5rem; /* Управляет расстоянием между текстом и видео */
+  gap: 0.1rem; /* Управляет расстоянием между текстом и видео */
   flex-wrap: wrap;
 }
 
