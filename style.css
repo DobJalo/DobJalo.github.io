@@ -198,11 +198,11 @@ main {
 
 a[href^="mailto:"] {
   color: var(--purple);
-  text-decoration: none;
+  text-decoration: underline;
 }
 
 a[href^="mailto:"]:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 /* При наведении на картинку (если нужно) */
