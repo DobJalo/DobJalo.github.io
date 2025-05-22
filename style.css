@@ -221,6 +221,12 @@ a[href^="mailto:"]:hover {
   max-width: 100%;
 }
 
+.video-wrapper iframe:hover {
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--purple);
+  max-width: 100%;
+}
+
 
 
 /* При наведении на картинку (если нужно) */
