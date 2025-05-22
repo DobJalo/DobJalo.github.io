@@ -149,10 +149,10 @@ main {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.media-block img:hover {
+/*.media-block img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px var(--purple);
-}
+}*/
 
 /* Видео */
 .video-wrapper iframe {
