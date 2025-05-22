@@ -70,7 +70,8 @@ nav {
   color: var(--text);
   position: relative;
   transition: color var(--transition);
-  text-shadow: 0 0 15px var(--red); /**/
+  text-shadow: 0 0 15px var(--red); 
+  margin-right: 2rem;
 }
 
 /* Подчеркивание при наведении */
