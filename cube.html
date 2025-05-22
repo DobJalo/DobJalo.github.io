@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NAME SURNAME - Game Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="header-title">
+        <h1>NAME <span class="highlight">SURNAME</span></h1>
+        <p class="subtitle">Game Developer Portfolio</p>
+      </div>
+      <div class="nav-links">
+        <a href="DobJalo.github.io">About me</a>
+        <a href="games.html">Games</a>
+        <a href="art.html">3D models</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Games</h2>
+    </section>
+
+    <!-- Первый блок -->
+    <section class="game-section">
+      <div class="game-text">
+        <pur>My name is NAME SURNAME.</pur>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+      </div>
+      <div class="game-media">
+        <a href="brain.html">
+          <img src="myimage1.jpg" alt="Game Screenshot" class="img_game" />
+        </a>
+        <iframe class="game-video" width="400" height="225" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+          title="YouTube video player" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Второй блок -->
+    <section class="game-section">
+      <div class="game-text">
+        <pur>My name is NAME SURNAME.</pur>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+      </div>
+      <div class="game-media">
+        <a href="echoes.html">
+          <img src="myimage1.jpg" alt="Game Screenshot" class="img_game" />
+        </a>
+      </div>
+    </section>
+
+    <!-- Третий блок -->
+    <section class="game-section">
+      <div class="game-text">
+        <pur>My name is NAME SURNAME.</pur>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+        <p>I develop video games.</p>
+      </div>
+      <div class="game-media">
+        <a href="cube.html">
+          <img src="myimage1.jpg" alt="Game Screenshot" class="img_game" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Стили только для games.html -->
+  <style>
+    .game-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 4rem;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .game-text {
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+      margin-left: 3rem;
+    }
+
+    .game-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-right: 3rem;
+    }
+
+    .game-video {
+      border-radius: 12px;
+      box-shadow: 0 0 35px var(--red);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .game-video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--purple);
+    }
+  </style>
+</body>
+</html>
 
