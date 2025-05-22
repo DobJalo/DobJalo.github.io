@@ -127,10 +127,6 @@ main {
   flex-wrap: wrap;                /* Поддержка адаптива */
 }
 
-.projects a {
-  display: block;
-}
-
 /*Фиол текст заголовок*/
 .projects pur {
   font-size: 1.2rem;
