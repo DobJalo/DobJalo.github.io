@@ -61,7 +61,7 @@ nav {
 
 /* Ссылки в навигации */
 .nav-links a {
-  margin-left: 4rem; /*2*/
+  margin-left: 4rem;
   font-size: 1.2rem;
   font-weight: bold;
   text-decoration: none;
