@@ -1,13 +1,11 @@
-/* === Цветовые переменные и переходы === */
 :root {
-  --bg: #181818;           /* Темный фон страницы */
-  --red: #ff2a2a;          /* Ярко-красный цвет акцентов */
-  --purple: #a044ff;       /* Фиолетовый цвет */
-  --text: #eaeaea;         /* Светлый цвет текста */
-  --transition: 0.4s ease; /* Плавность переходов */
+  --bg: #181818;
+  --red: #ff2a2a;
+  --purple: #a044ff;
+  --text: #eaeaea;
+  --transition: 0.4s ease;
 }
 
-/* === Базовые стили для body === */
 body {
   background: var(--bg);
   color: var(--text);
@@ -17,19 +15,17 @@ body {
   box-sizing: border-box;
 }
 
-/* === Стили для фиксированного хедера === */
 header {
-  position: fixed;           /* Закрепляем сверху */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background: linear-gradient(to right, var(--red), var(--purple));
-  padding: 0.4rem 1rem;     /* Внутренние отступы */ /*0ю75 1*/
+  padding: 0.4rem 1rem;
   box-sizing: border-box;
-  z-index: 1000;             /* Поверх всего */
+  z-index: 1000;
 }
 
-/* Контейнер внутри header */
 nav {
   display: flex;
   justify-content: space-between;
@@ -37,16 +33,13 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Заголовок имени */
 .header-title h1 {
   font-size: 2rem;
   font-weight: bold;
-  letter-spacing: 1px;
   margin: 0;
   margin-bottom: 0.2rem;
 }
 
-/* Подзаголовок */
 .header-title .subtitle {
   font-size: 1.4rem;
   font-weight: 600;
@@ -54,12 +47,10 @@ nav {
   color: var(--text);
 }
 
-/* Выделение фиолетовым */
 .highlight {
   color: var(--purple);
 }
 
-/* Ссылки в навигации */
 .nav-links a {
   margin-left: 4rem;
   font-size: 1.2rem;
@@ -68,10 +59,9 @@ nav {
   color: var(--text);
   position: relative;
   transition: color var(--transition);
-  text-shadow: 0 0 15px var(--red); /**/
+  text-shadow: 0 0 15px var(--red);
 }
 
-/* Подчеркивание при наведении */
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -96,125 +86,75 @@ nav {
   transform: scaleX(1);
 }
 
-/* === Основной контент main === */
+/* Основной отступ под фиксированным header */
 main {
-  padding-top: 6rem;       /* Отступ сверху, чтобы не залезал под header (примерно высота header + запас) */
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-top: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   text-align: center;
 }
 
-/* Блок intro */
+/* Заголовок страницы */
 .intro h2 {
   font-size: 2.5rem;
   color: var(--red);
   margin-bottom: 1rem;
 }
 
-/* Параграф в intro (если появится) */
-.intro p {
-  font-size: 1.2rem;
-  color: var(--purple);
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Секция проектов */
-.projects {
-  margin-top: 4rem;
+/* === Контейнер с текстом и медиа === */
+.content-block {
   display: flex;
-  justify-content: center; /* Разнести контент по краям */
-  /*align-items: flex-start;*/        /* Выровнять по верхнему краю */
-  gap: 1rem; /*Для смены расстояния между объектами*/
-  flex-wrap: wrap;                /* Поддержка адаптива */
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 4rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
 }
 
-/*Фиол текст заголовок*/
-.projects pur {
+/* Левая часть: текст */
+.text-block {
+  flex: 1;
+  max-width: 500px;
+  text-align: left;
+  margin-left: 2rem; /* сдвигает ближе к центру */
+}
+
+.text-block p {
+  font-size: 1.1rem;
+  color: var(--text);
+  margin: 0 0 1rem 0;
+}
+
+.text-block .pur {
   font-size: 1.2rem;
   color: var(--purple);
   font-weight: bold;
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Текст о проектах */
-.projects p {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 1.1rem;
-  color: var(--text);
-  margin: 0;
-  flex-basis: 100%;
-  text-align: left;
+/* Правая колонка: картинки и видео */
+.media-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-right: 2rem; /* тоже ближе к центру */
 }
 
-/* Изображение проекта */
-.projects img {
+/* Картинки */
+.media-block img {
   width: 400px;
   height: 500px;
   object-fit: cover;
   border-radius: 12px;
-  /*box-shadow: 0 0 15px var(--red);*/
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-/* Изображение игр */
-.projects img_game {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 12px;
-  box-shadow: 0 0 35px var(--red);
-  transition: transform var(--transition), box-shadow var(--transition);
-  display: block;
-}
-.projects img_game:hover {
+.media-block img:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px var(--purple);
 }
 
-.pdf-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--red);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  font-weight: bold;
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.pdf-button:hover {
-  background-color: var(--purple);
-}
-
-.text-block {
-  flex: 1;                         /* Занимает доступное пространство */
-  max-width: 600px;               /* Ограничиваем ширину текста */
-  text-align: left;               /* Выравнивание по левому краю */
-  font-size: 1.1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/*ссылки*/
-a[href^="mailto:"] {
-  color: var(--purple);
-  text-decoration: underline;
-}
-
-a[href^="mailto:"]:hover {
-  text-shadow: 0 0 20px var(--purple);
-}
-
-/*видео*/
-.video-project {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  gap: 0.1rem; /* Управляет расстоянием между текстом и видео */
-  flex-wrap: wrap;
-}
-
+/* Видео */
 .video-wrapper iframe {
   border-radius: 12px;
   box-shadow: 0 0 15px var(--red);
@@ -222,99 +162,10 @@ a[href^="mailto:"]:hover {
 }
 
 .video-wrapper iframe:hover {
-  border-radius: 12px;
   box-shadow: 0 0 15px var(--purple);
-  max-width: 100%;
 }
 
-
-
-/* При наведении на картинку (если нужно) */
-/*
-.projects img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px var(--purple);
-}
-*/
-
-/* Подвал (заполнить позже при необходимости) */
-/*footer {
-  margin-top: 4rem;
-  padding: 1rem;
+/* Медиа-блок */
+.media-block {
   text-align: center;
-  color: #666;
-  background: #111;
-  font-size: 0.9rem;
-}*/
-
-
-
-/* Контейнер формы */
-.contact-form {
-  background: #222;               /* Темный фон */
-  padding: 1rem;                 /* Внутренние отступы */
-  border-radius: 12px;           /* Скругление углов */
-  box-shadow: 0 0 15px var(--red); /* Тень с красным оттенком */
-  color: var(--text);            /* Цвет текста */
-  max-width: 400px;              /* Максимальная ширина */
-  margin: auto;                  /* Центрирование */
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* Заголовок формы */
-.contact-form h2 {
-  color: var(--purple);
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  font-size: 1.2rem;
-}
-
-/* Метки к полям */
-.contact-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-/* Поля ввода и текстовое поле */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  border: none;
-  background: #333;
-  color: var(--text);
-  font-size: 1rem;
-  /*font-family: inherit;*/
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  resize: none; /* Запрет изменения размера textarea */
-  margin-bottom: 1.2rem;
-  box-sizing: border-box;
-  transition: box-shadow 0.3s ease;
-}
-
-/* Подсветка полей при фокусе */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 8px var(--red);
-  background: #2a2a2a;
-}
-
-.contact-form button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--red);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.contact-form button:hover {
-  background-color: var(--purple);
 }
