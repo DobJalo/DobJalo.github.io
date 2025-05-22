@@ -120,20 +120,22 @@ main {
 
 /* Секция проектов */
 .projects {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 5rem; /* ← Меняй это значение для расстояния */
-  flex-wrap: wrap;
-  /*display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.2rem;
-  flex-wrap: wrap;
   margin-top: 4rem;
-  text-align: left;*/
+  display: flex;
+  justify-content: center; /* Разнести контент по краям */
+  /*align-items: flex-start;*/        /* Выровнять по верхнему краю */
+  gap: 1rem; /*Для смены расстояния между объектами*/
+  flex-wrap: wrap;                /* Поддержка адаптива */
+  align-items: center;
 }
 
+/*Фиол текст заголовок*/
+.projects pur {
+  font-size: 1.2rem;
+  color: var(--purple);
+  font-weight: bold;
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 /* Текст о проектах */
 .projects p {
@@ -186,27 +188,12 @@ main {
   background-color: var(--purple);
 }
 
-
 .text-block {
-  flex: 1;
-  max-width: 600px;
-}
-
-.text-block pur {
-  display: block;
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--purple);
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.media-block {
-  flex: 1;
-  max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex: 1;                         /* Занимает доступное пространство */
+  max-width: 600px;               /* Ограничиваем ширину текста */
+  text-align: left;               /* Выравнивание по левому краю */
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /*ссылки*/
@@ -230,13 +217,13 @@ a[href^="mailto:"]:hover {
 
 .video-wrapper iframe {
   border-radius: 12px;
-  box-shadow: 0 0 35px var(--red);
+  box-shadow: 0 0 15px var(--red);
   max-width: 100%;
 }
 
 .video-wrapper iframe:hover {
   border-radius: 12px;
-  box-shadow: 0 0 35px var(--purple);
+  box-shadow: 0 0 15px var(--purple);
   max-width: 100%;
 }
 
@@ -331,5 +318,3 @@ a[href^="mailto:"]:hover {
 .contact-form button:hover {
   background-color: var(--purple);
 }
-
-
