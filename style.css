@@ -153,7 +153,6 @@ main {
   height: 500px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 0 15px var(--red);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -196,94 +195,12 @@ main {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* При наведении на картинку (если нужно) */
-/*
-.projects img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px var(--purple);
-}
-*/
-
-/* Подвал (заполнить позже при необходимости) */
-/*footer {
-  margin-top: 4rem;
-  padding: 1rem;
-  text-align: center;
-  color: #666;
-  background: #111;
-  font-size: 0.9rem;
-}*/
-
-
-
-/* Контейнер формы */
-.contact-form {
-  background: #222;               /* Темный фон */
-  padding: 1rem;                 /* Внутренние отступы */
-  border-radius: 12px;           /* Скругление углов */
-  box-shadow: 0 0 15px var(--red); /* Тень с красным оттенком */
-  color: var(--text);            /* Цвет текста */
-  max-width: 400px;              /* Максимальная ширина */
-  margin: auto;                  /* Центрирование */
-  font-family: 'Orbitron', sans-serif;
-}
-
-/* Заголовок формы */
-.contact-form h2 {
+.purple-link {
   color: var(--purple);
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  font-size: 1.2rem;
+  text-decoration: underline;
 }
 
-/* Метки к полям */
-.contact-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  color: var(--text);
+.purple-link:hover {
+  box-shadow: 0 0 15px var(--purple);
 }
-
-/* Поля ввода и текстовое поле */
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  border: none;
-  background: #333;
-  color: var(--text);
-  font-size: 1rem;
-  /*font-family: inherit;*/
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  resize: none; /* Запрет изменения размера textarea */
-  margin-bottom: 1.2rem;
-  box-sizing: border-box;
-  transition: box-shadow 0.3s ease;
-}
-
-/* Подсветка полей при фокусе */
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: none;
-  box-shadow: 0 0 8px var(--red);
-  background: #2a2a2a;
-}
-
-.contact-form button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--red);
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.contact-form button:hover {
-  background-color: var(--purple);
-}
-
 
