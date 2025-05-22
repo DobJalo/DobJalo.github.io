@@ -157,13 +157,21 @@ main {
 
 /* Изображение игр */
 .projects img_game {
+  isplay: block;
+  vertical-align: middle;
   width: 400px;
   height: 400px;
   object-fit: cover;
   border-radius: 12px;
   box-shadow: 0 0 35px var(--red);
   transition: transform var(--transition), box-shadow var(--transition);
-  display: block;
+  /*width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 0 35px var(--red);
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: block;*/
 }
 .projects img_game:hover {
   transform: scale(1.05);
