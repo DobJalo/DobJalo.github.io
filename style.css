@@ -123,7 +123,7 @@ main {
   display: flex;
   justify-content: center; /* Разнести контент по краям */
   align-items: flex-start;        /* Выровнять по верхнему краю */
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;                /* Поддержка адаптива */
 }
 
@@ -183,6 +183,14 @@ main {
 
 .pdf-button:hover {
   background-color: var(--purple);
+}
+
+.text-block {
+  flex: 1;                         /* Занимает доступное пространство */
+  max-width: 600px;               /* Ограничиваем ширину текста */
+  text-align: left;               /* Выравнивание по левому краю */
+  font-size: 1.1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* При наведении на картинку (если нужно) */
@@ -275,10 +283,4 @@ main {
   background-color: var(--purple);
 }
 
-.text-block {
-  flex: 1;                         /* Занимает доступное пространство */
-  max-width: 600px;               /* Ограничиваем ширину текста */
-  text-align: left;               /* Выравнивание по левому краю */
-  font-size: 1.1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+
