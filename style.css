@@ -3,6 +3,7 @@
   --bg: #181818;           /* Темный фон страницы */
   --red: #ff2a2a;          /* Ярко-красный цвет акцентов */
   --purple: #a044ff;       /* Фиолетовый цвет */
+  --grey: #949494
   --text: #eaeaea;         /* Светлый цвет текста */
   --transition: 0.4s ease; /* Плавность переходов */
 }
@@ -112,6 +113,12 @@ main {
 /* Блок intro */
 .intro h2 {
   font-size: 2.5rem;
+  color: var(--grey);
+  margin-bottom: 1rem;
+}
+
+.intro h3 {
+  font-size: 2rem;
   color: var(--red);
   margin-bottom: 1rem;
 }
