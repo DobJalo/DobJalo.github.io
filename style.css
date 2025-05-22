@@ -206,6 +206,23 @@ a[href^="mailto:"]:hover {
   text-shadow: 0 0 20px var(--purple);
 }
 
+/*видео*/
+.video-project {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem; /* Управляет расстоянием между текстом и видео */
+  flex-wrap: wrap;
+}
+
+.video-wrapper iframe {
+  border-radius: 12px;
+  box-shadow: 0 0 15px var(--red);
+  max-width: 100%;
+}
+
+
+
 /* При наведении на картинку (если нужно) */
 /*
 .projects img:hover {
