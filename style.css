@@ -124,7 +124,7 @@ main {
   display: flex;
   justify-content: center; /* Разнести контент по краям */
   /*align-items: flex-start;*/        /* Выровнять по верхнему краю */
-  gap: 2rem;
+  gap: 1rem; /*Для смены расстояния между объектами*/
   flex-wrap: wrap;                /* Поддержка адаптива */
   align-items: center;
 }
