@@ -215,12 +215,32 @@ main {
       flex-wrap: wrap;
     }
 
-    .game-text {
+    /*.game-text {
       flex: 1;
       max-width: 500px;
       text-align: left;
       margin-left: 3rem;
+    }*/
+
+.game-text p{
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+      margin-left: 3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
+.game-text pur{
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+      margin-left: 3rem;
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--purple);
+  font-weight: bold;
+    }
+
+
+
 
     .game-media {
       display: flex;
