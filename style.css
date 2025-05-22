@@ -205,3 +205,38 @@ main {
   text-shadow: 0 0 15px var(--purple);
 }
 
+/*для игр*/
+    .game-section {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      margin-top: 4rem;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .game-text {
+      flex: 1;
+      max-width: 500px;
+      text-align: left;
+      margin-left: 3rem;
+    }
+
+    .game-media {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      margin-right: 3rem;
+    }
+
+    .game-video {
+      border-radius: 12px;
+      box-shadow: 0 0 35px var(--red);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .game-video:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px var(--purple);
+    }
