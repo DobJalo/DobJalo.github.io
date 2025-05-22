@@ -150,6 +150,7 @@ main {
     
 /* Текст о проектах */
 .projects p {
+  color: var(--purple);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
   color: var(--text);
@@ -274,12 +275,17 @@ main {
 details {
   background-color: #1a1a1a;
   color: var(--purple);
-  border: 1px solid var(--purple);
+  border: 1px solid var(--red);
+  box-shadow: 0 0 35px var(--red);
   border-radius: 8px;
   margin-bottom: 1rem;
   padding: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+}
+
+details:hover{
+box-shadow: 0 0 35px var(--purple;
 }
 
 details[open] {
