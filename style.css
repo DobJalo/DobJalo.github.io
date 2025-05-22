@@ -211,7 +211,7 @@ main {
       justify-content: center;
       align-items: flex-start;
       margin-top: 4rem;
-      gap: 3rem;
+      gap: 5rem;
       flex-wrap: wrap;
     }
 
@@ -238,9 +238,6 @@ main {
   color: var(--purple);
   font-weight: bold;
     }
-
-
-
 
     .game-media {
       display: flex;
