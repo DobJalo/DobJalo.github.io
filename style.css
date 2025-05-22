@@ -24,7 +24,7 @@ header {
   left: 0;
   right: 0;
   background: linear-gradient(to right, var(--red), var(--purple));
-  padding: 0.75rem 1rem;     /* Внутренние отступы */
+  padding: 0.4rem 1rem;     /* Внутренние отступы */ /*0ю75 1*/
   box-sizing: border-box;
   z-index: 1000;             /* Поверх всего */
 }
@@ -68,6 +68,7 @@ nav {
   color: var(--text);
   position: relative;
   transition: color var(--transition);
+  text-shadow: 0 0 8px var(--red); /**/
 }
 
 /* Подчеркивание при наведении */
@@ -122,9 +123,10 @@ main {
   margin-top: 4rem;
   display: flex;
   justify-content: center; /* Разнести контент по краям */
-  align-items: flex-start;        /* Выровнять по верхнему краю */
+  /*align-items: flex-start;*/        /* Выровнять по верхнему краю */
   gap: 2rem;
   flex-wrap: wrap;                /* Поддержка адаптива */
+  align-items: center;
 }
 
 /*Фиол текст заголовок*/
