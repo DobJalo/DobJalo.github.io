@@ -2,31 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <!-- Установка кодировки документа -->
-
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"/>-->
-  <!-- Отвечает за адаптивность сайта на мобильных устройствах -->
-
   <title>NAME SURNAME - Game Developer Portfolio</title>
-  <!-- Заголовок страницы во вкладке браузера -->
-
   <link rel="stylesheet" href="style.css" />
-  <!-- Подключение внешнего CSS-файла -->
-
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Подключение шрифта Orbitron из Google Fonts -->
 </head>
 <body>
-  <!-- Хедер с фиксированным позиционированием -->
   <header>
     <nav>
-      <!-- Левая часть: заголовок -->
       <div class="header-title">
         <h1>NAME <span class="highlight">SURNAME</span></h1>
         <p class="subtitle">Game Developer Portfolio</p>
       </div>
-
-      <!-- Правая часть: навигационные ссылки -->
       <div class="nav-links">
         <a href="DobJalo.github.io">About me</a>
         <a href="games.html">Games</a>
@@ -35,13 +21,13 @@
     </nav>
   </header>
 
-  <!-- Основной контент сайта -->
   <main>
     <section class="intro">
       <h2>About me</h2>
     </section>
 
-    <section class="projects">
+    <section class="content-block">
+      <!-- Левая часть: текст -->
       <div class="text-block">
         <p>My name is NAME SURNAME.</p>
         <p>I develop video games.</p>
@@ -49,18 +35,21 @@
         <p>I develop video games.</p>
         <p>I develop video games.</p>
         <p>I develop video games.</p>
-        <div style="height: 3rem;"></div>
+
+        <div style="height: 2rem;"></div>
         <p>Email to contact me: <a href="mailto:your@email.com">your@email.com</a></p>
-    <div style="height: 3rem;"></div>
+
+        <div style="height: 2rem;"></div>
         <a href="Name_Surname_CV.pdf" target="_blank" class="pdf-button">View Resume</a>
-          <div style="height: 3rem;"></div>
       </div>
-      <img src="images/myimage.jpg" alt="My Image">
+
+      <!-- Правая часть: изображение -->
+      <div class="media-column">
+        <div class="media-block">
+          <img src="images/myimage.jpg" alt="My Image">
+        </div>
+      </div>
     </section>
-    
   </main>
-
-
-
 </body>
 </html>
