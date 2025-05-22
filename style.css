@@ -234,6 +234,7 @@ main {
     }*/
 
 .game-text p{
+  color: var(--purple);
   font-size: 1.1rem;
       flex: 1;
       max-width: 500px;
@@ -276,7 +277,7 @@ details {
   background-color: #1a1a1a;
   color: var(--purple);
   border: 1px solid var(--red);
-  box-shadow: 0 0 35px var(--red);
+  box-shadow: 0 0 15px var(--red);
   border-radius: 8px;
   margin-bottom: 1rem;
   padding: 1rem;
@@ -284,8 +285,8 @@ details {
   transition: all 0.3s ease;
 }
 
-details:hover{
-box-shadow: 0 0 35px var(--purple;
+.details:hover{
+box-shadow: 0 0 15px var(--purple;
 }
 
 details[open] {
