@@ -120,22 +120,23 @@ main {
 
 /* Секция проектов */
 .projects {
-  margin-top: 4rem;
   display: flex;
-  justify-content: center; /* Разнести контент по краям */
-  /*align-items: flex-start;*/        /* Выровнять по верхнему краю */
-  gap: 1rem; /*Для смены расстояния между объектами*/
-  flex-wrap: wrap;                /* Поддержка адаптива */
+  justify-content: space-between;
   align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 4rem;
+  text-align: left;
 }
 
+
 /*Фиол текст заголовок*/
-.projects pur {
+/*.projects pur {
   font-size: 1.2rem;
   color: var(--purple);
   font-weight: bold;
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+}*/
 
 /* Текст о проектах */
 .projects p {
@@ -188,12 +189,27 @@ main {
   background-color: var(--purple);
 }
 
+
 .text-block {
-  flex: 1;                         /* Занимает доступное пространство */
-  max-width: 600px;               /* Ограничиваем ширину текста */
-  text-align: left;               /* Выравнивание по левому краю */
-  font-size: 1.1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex: 1;
+  max-width: 600px;
+}
+
+.text-block pur {
+  display: block;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--purple);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.media-block {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /*ссылки*/
