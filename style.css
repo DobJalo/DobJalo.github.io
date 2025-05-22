@@ -121,9 +121,9 @@ main {
 .projects {
   margin-top: 4rem;
   display: flex;
-  justify-content: space-between; /* Разнести контент по краям */
+  justify-content: center; /* Разнести контент по краям */
   align-items: flex-start;        /* Выровнять по верхнему краю */
-  gap: 2rem;
+  gap: 3rem;
   flex-wrap: wrap;                /* Поддержка адаптива */
 }
 
