@@ -176,7 +176,7 @@ main {
 }
 
 /* Изображение игр */
-.projects img_game {
+.projects .img_game {
   width: 400px;
   height: 400px;
   object-fit: cover;
