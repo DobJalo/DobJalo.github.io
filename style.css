@@ -148,7 +148,7 @@ main {
       text-align: left;
       margin-left: 3rem;
   /**/
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--purple);
   font-weight: bold;
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -250,7 +250,7 @@ main {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 .game-text pur{
-  font-size: 1.2rem;
+  font-size: 1.5rem;
       flex: 1;
       max-width: 500px;
       text-align: left;
