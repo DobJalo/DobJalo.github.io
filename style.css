@@ -262,6 +262,8 @@ main {
     }
 
     .game-media {
+      width: 200px;
+  height: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
