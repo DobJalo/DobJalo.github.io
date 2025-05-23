@@ -241,7 +241,7 @@ main {
       margin-left: 3rem;
     }
 
-.game-text p{
+.game-text p{ /*обычный белый*/
   font-size: 1.1rem;
       flex: 1;
       max-width: 500px;
@@ -249,11 +249,11 @@ main {
       margin-left: 3rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
-.game-text pur{
-  font-size: 1.5rem;
+.game-text pur{ /*фиол заголовок*/
+  font-size: 1.7rem;
       flex: 1;
       max-width: 500px;
-      text-align: left;
+      text-align: center;
       margin-left: 3rem;
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--purple);
