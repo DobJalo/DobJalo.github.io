@@ -118,8 +118,8 @@ main {
 }
 
 .intro h3 {
-  font-size: 2rem;
-  color: var(--purple); /*grey*/
+  font-size: 1.5rem;
+  color: var(--grey); /*grey*/
   margin-bottom: 1rem;
 }
 
