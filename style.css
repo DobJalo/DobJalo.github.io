@@ -234,12 +234,12 @@ main {
       flex-wrap: wrap;
     }
 
-    /*.game-text {
+    .game-text {
       flex: 1;
       max-width: 500px;
       text-align: left;
       margin-left: 3rem;
-    }*/
+    }
 
 .game-text p{
   font-size: 1.1rem;
