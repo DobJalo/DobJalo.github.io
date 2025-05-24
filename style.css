@@ -125,6 +125,7 @@ main {
 
 /* Параграф в intro (если появится) */
 .intro p {
+  text-align: left;
   font-size: 1.2rem;
   color: var(--purple);
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
