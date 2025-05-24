@@ -143,11 +143,10 @@ main {
 
 /*Фиол текст заголовок*/
 .projects pur {
+  text-align: left;
   flex: 1;
-      max-width: 500px;
-      text-align: left;
-      margin-left: 3rem;
-  /**/
+  max-width: 500px;
+  margin-left: 3rem;
   font-size: 1.7rem;
   color: var(--purple);
   font-weight: bold;
