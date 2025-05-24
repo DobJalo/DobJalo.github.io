@@ -192,7 +192,6 @@ main {
 }
 
 .pdf-button {
-  text-align: center;
   display: inline-block;
   padding: 0.75rem 1.5rem;
   background-color: var(--red);
@@ -206,6 +205,11 @@ main {
 
 .pdf-button:hover {
   background-color: var(--purple);
+}
+
+.button-wrapper { /*нужно чтобы сделать кнопки-ссылки посередине*/
+  text-align: center;
+  margin-top: 2rem; 
 }
 
 .text-block {
