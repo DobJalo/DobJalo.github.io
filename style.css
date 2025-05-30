@@ -141,6 +141,7 @@ main {
   gap: 2rem;
   flex-wrap: wrap;                /* Поддержка адаптива */
   align-items: center;
+  padding-left: 2rem; /**/
 }
 
 /*Фиол текст заголовок*/
