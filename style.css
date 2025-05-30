@@ -312,8 +312,8 @@ summary {
 
 
 .code-block {
-  background-color: #2d2d2d;    /* тёмный фон */
-  /*background-color: var(--grey)*/
+  /*background-color: #2d2d2d;*/    /* тёмный фон */
+  background-color: var(--bg)
   color: var(--text);
   padding: 1rem;
   border-radius: 10px;
