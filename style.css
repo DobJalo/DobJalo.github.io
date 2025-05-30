@@ -312,15 +312,16 @@ summary {
 
 
 .code-block {
-  background-color: #1e1e1e;
-  color: #dcdcdc;
+  background-color: #2d2d2d;      /* тёмный фон */
+  color: #f8f8f2;                 /* светлый текст */
   padding: 1rem;
-  border-radius: 8px;
-  max-height: 200px;
-  overflow: auto;
-  font-family: monospace;
-  font-size: 0.9rem;
-  margin-top: 1rem;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.95rem;
+  max-height: 300px;             /* ограничение высоты */
+  overflow: auto;                /* включить прокрутку */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 1.5rem;
   white-space: pre;
 }
 
