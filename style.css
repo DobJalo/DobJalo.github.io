@@ -246,6 +246,7 @@ main {
       max-width: 500px;
       text-align: left;
       padding-left: 2rem;
+      margin-left: 3rem;
     }
 
 .game-text p{ /*обычный белый*/
