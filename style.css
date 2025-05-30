@@ -311,3 +311,17 @@ summary {
 }
 
 
+.code-block {
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 1rem;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow: auto;
+  font-family: monospace;
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  white-space: pre;
+}
+
+
