@@ -326,8 +326,10 @@ summary {
   white-space: pre;
   box-shadow: 0 0 35px var(--red);
   text-align: left;
+  
+  margin-left: 3rem;/**/
 
-  padding: 0;/**/
+  padding: 0;
 
   transition: transform var(--transition), box-shadow var(--transition);
 }
@@ -337,7 +339,7 @@ summary {
   margin: 0;
   border: none;
   background: none;
-  line-height: 1.4; /**/
+  line-height: 1.4; 
 }
 
 
