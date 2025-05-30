@@ -265,6 +265,7 @@ main {
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--purple);
   font-weight: bold;
+  margin: 0;
     }
 
     .game-media {
