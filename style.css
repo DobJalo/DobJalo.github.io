@@ -322,7 +322,7 @@ summary {
   max-height: 600px;             /* ограничение высоты */
   overflow: auto;                /* включить прокрутку */
   /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
-  margin-top: 1.5rem;
+  /*margin-top: 1.5rem;*/
   white-space: pre;
   box-shadow: 0 0 35px var(--red);
   text-align: left;
