@@ -326,6 +326,8 @@ summary {
   white-space: pre;
   box-shadow: 0 0 35px var(--red);
   text-align: left;
+
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .code-block:hover {
