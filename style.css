@@ -325,6 +325,7 @@ summary {
   margin-top: 1.5rem;
   white-space: pre;
   box-shadow: 0 0 35px var(--red);
+  text-align: left;
 }
 
 .code-block:hover {
