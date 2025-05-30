@@ -251,7 +251,6 @@ main {
       flex: 1;
       max-width: 500px;
       text-align: left;
-      margin-left: 2rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
     }
@@ -260,7 +259,6 @@ main {
       flex: 1;
       max-width: 500px;
       text-align: left;
-      margin-left: 2rem;
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--purple);
   font-weight: bold;
@@ -327,8 +325,6 @@ summary {
   white-space: pre;
   box-shadow: 0 0 35px var(--red);
   text-align: left;
-  
-  margin-left: 2rem;
   
   padding: 0;
 
