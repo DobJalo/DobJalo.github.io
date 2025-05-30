@@ -254,6 +254,7 @@ main {
       text-align: left;
       margin-left: 3rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
     }
 .game-text pur{ /*фиол заголовок*/
   font-size: 1.7rem;
