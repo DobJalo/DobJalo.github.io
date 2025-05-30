@@ -312,17 +312,23 @@ summary {
 
 
 .code-block {
-  background-color: #2d2d2d;      /* тёмный фон */
-  color: #f8f8f2;                 /* светлый текст */
+  /*background-color: #2d2d2d;*/      /* тёмный фон */
+  background-color: var(--grey)
+  color: var(--text);
   padding: 1rem;
   border-radius: 10px;
   font-family: 'Courier New', Courier, monospace;
   font-size: 0.95rem;
-  max-height: 300px;             /* ограничение высоты */
+  max-height: 1200px;             /* ограничение высоты */
   overflow: auto;                /* включить прокрутку */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   margin-top: 1.5rem;
   white-space: pre;
+  box-shadow: 0 0 35px var(--red);
+}
+
+.code-block:hover {
+  box-shadow: 0 0 25px var(--purple);
 }
 
 
