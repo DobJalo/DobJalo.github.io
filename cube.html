@@ -56,94 +56,293 @@
 
 
 <div class="code-block">
-  <pre><code class="language-csharp">using UnityEngine;
-using GoogleMobileAds.Api;
+  <pre><code class="language-csharp">// timer script (+ save/delete)
 
-public class AdInitializer : MonoBehaviour
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+
+
+[System.Serializable]
+public class SaveTime
 {
+    // array: hours, minutes, seconds
+    public int[] time; 
+
+    public SaveTime(int[] character)
+    {
+        time = new int[3]
+        {
+            character[0],
+            character[1],
+            character[2]
+        };
+    }
+}
+
+public static class SaveLoadTime
+{
+
+    public static void Save(int[] character, string nameTime)
+    {
+        // formatter for binary serialization
+        BinaryFormatter formatter = new BinaryFormatter();
+
+        // overwrite or create new file
+        FileStream file = File.Create(Application.persistentDataPath + nameTime);
+
+        // wrap data into SaveTime object
+        SaveTime data = new SaveTime(character);
+
+        // serialize and write to file
+        formatter.Serialize(file, data);
+
+        // close file 
+        file.Close(); 
+    }
+
+    public static SaveTime Load(string nameTime)
+    {
+        // check if file exists
+        if (File.Exists(Application.persistentDataPath + nameTime)) 
+        {
+            // formatter for binary serialization
+            BinaryFormatter formatter = new BinaryFormatter();
+
+            // overwrite or create new file
+            FileStream file = File.Open(Application.persistentDataPath + nameTime, FileMode.Open);
+
+            // deserialize object
+            SaveTime data = formatter.Deserialize(file) as SaveTime;
+
+            // close file
+            file.Close(); 
+
+            return data;
+        }
+        else
+        {
+            return null;
+        }
+    }
+}
+
+public class TimerScript : MonoBehaviour
+{
+    public GameObject BuildLevelObject;
+    public GameObject timeText;
+
+    public Text YouWonText;
+    public Text txt;
+
+    int[] time = { 0, 0, 0 };
+    int count; // timer control
+    int sumRight, checkSum, size;
+
+    string nameTime;
+
+    bool stop = false; // indicator to stop timer
+    bool start; // indicator that the game started
+    bool timeLoaded = false; // indicator that time had been loaded
+
     void Start()
     {
-        MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
-    MobileAds.Initialize(initStatus => { });
+        // start counting time
+        StartCoroutine(Time()); 
+    }
+
+    IEnumerator Time()
+    {
+        // wait 1 second
+        yield return new WaitForSeconds(1);
+
+        // start timer only when scene was loaded (int count is an indicator of it)
+        if (count > 100) 
+        {
+            // increase seconds
+            time[2]++;
+
+            // when seconds = 60
+            if (time[2] == 60) 
+            {
+                // add one more minute
+                time[1]++;
+                // reset seconds
+                time[2] = 0; 
+            }
+
+            // when minutes = 60
+            if (time[1] == 60) 
+            {
+                // add one more hour
+                time[0]++;
+                // reset minutes
+                time[1] = 0; 
+            }
+
+            // show updated UI time on screen
+            txt.text = time[0] + ":" + time[1] + ":" + time[2]; 
+        }
+
+        if (stop == false)
+        {
+            // repeat
+            StartCoroutine(Time()); 
+        }
+    }
+
+    // determine file name based on the size of the level
+    // 1. in the beginning player can choose size of the level - 5 cubes * 4 cubes for example
+    // 2. data is saved to a file which name contains this size
+    void NameTime()
+    {
+        // Xnum  - Number of cubes in height
+        // Ynum  - Number of cubes in width
+        if (PlayerPrefs.HasKey("Xnum") && PlayerPrefs.HasKey("Ynum"))
+        {
+            int Xnum = PlayerPrefs.GetInt("Xnum");
+            int Ynum = PlayerPrefs.GetInt("Ynum");
+
+            // 3*3 level
+            if (Xnum == 3 && Ynum == 3) 
+            {
+                nameTime = "/First33.dat";
+            }
+
+            // 5*4 level
+            if (Xnum == 5 && Ynum == 4) 
+            {
+                nameTime = "/First54.dat";
+            }
+
+            // 8*5 level
+            if (Xnum == 8 && Ynum == 5) 
+            {
+                nameTime = "/First85.dat";
+            }
+        }
+    }
+
+    void EndLoadTime()
+    {
+        // set filename
+        NameTime();
+
+        //load best time
+        SaveTime data = SaveLoadTime.Load(nameTime); 
+
+        if (data != null)
+        {
+            // compare everything: hours, minutes, seconds
+            // update (save) data, if new score is better than the previous best score
+            if (time[0] != 0)
+            {
+                if (data.time[0] > time[0])
+                {
+                    PlayerPrefs.SetString(nameTime, time[0] + ":" + time[1] + ":" + time[2]);
+                    SaveLoadTime.Save(time, nameTime); 
+                }
+            }
+            else
+            {
+                if (time[1] != 0)
+                {
+                    if (data.time[1] > time[1])
+                    {
+                        PlayerPrefs.SetString(nameTime, time[0] + ":" + time[1] + ":" + time[2]);
+                        SaveLoadTime.Save(time, nameTime); 
+                    }
+                }
+                else
+                {
+                    if (data.time[2] > time[2])
+                    {
+                        PlayerPrefs.SetString(nameTime, time[0] + ":" + time[1] + ":" + time[2]);
+                        SaveLoadTime.Save(time, nameTime); 
+                    }
+                }
+            }
+        }
+        else
+        {
+            // save current data if there are no saved best score
+            PlayerPrefs.SetString(nameTime, time[0] + ":" + time[1] + ":" + time[2]);
+            SaveLoadTime.Save(time, nameTime);
+        }
+
+        // show current score and best score
+        data = SaveLoadTime.Load(nameTime);
+        YouWonText.text = "Level completed!\nYour score: " + time[0] + ":" + time[1] + ":" + time[2] + "\nBest score: " + data.time[0] + ":" + data.time[1] + ":" + data.time[2];
+    }
+
+    // current timer is saved to temporary file when player leaves level
+    // player can then continue this level with saved timer score
+    public void SaveTimeBeforeExit() 
+    {
+        // save to temporary file
+        nameTime = "/TemporaryTime.dat"; 
+        SaveLoadTime.Save(time, nameTime);
+    }
+
+    // when temporary file is not needed anymore (player finished level, and score will be saved to another file for example)
+    // -> delete temporary file
+    public void DeleteTime() 
+    {
+        nameTime = "/TemporaryTime.dat";
+        if (File.Exists(Application.persistentDataPath + nameTime))
+        {
+            // if there is a file - delete it
+            File.Delete(Application.persistentDataPath + nameTime);
+        }
+    }
+
+    void Update()
+    {
+        // get values from BuildLevelScript
+        count = BuildLevelObject.GetComponent<BuildLevelScript>().count;
+        sumRight = BuildLevelObject.GetComponent<BuildLevelScript>().sumRight;
+        checkSum = BuildLevelObject.GetComponent<BuildLevelScript>().checkSum;
+        size = BuildLevelObject.GetComponent<BuildLevelScript>().size;
+
+        // get value from SaveLoadScript
+        start = BuildLevelObject.GetComponent<SaveLoadScript>().start;
+
+        // when level is ready -> player can start playing -> timer starts
+        // int count is used to indicate it
+        if (timeLoaded == false && start==true)
+        {
+            count = 100;
+        }
+
+        // if game started but timer is not loaded 
+        // -> load time from temporary file
+        if (start == true && count <= 100)
+        {
+            nameTime = "/TemporaryTime.dat";
+            SaveTime data = SaveLoadTime.Load(nameTime); 
+            time = new int[3] { data.time[0], data.time[1], data.time[2] };
+
+            if (timeLoaded == false)
+            {
+                timeLoaded=true;
+                count = 101;
+            }
+        }
+
+        // check if level is completed
+        if (count > 100 && sumRight == size && checkSum == size)
+        {
+            // stop the timer
+            stop = true;
+
+            // hide timer UI
+            timeText.SetActive(false);
+
+            // save and show result
+            EndLoadTime();
+        }
     }
 }
 
