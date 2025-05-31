@@ -61,14 +61,47 @@
 
 
 <div class="code-block">
-  <pre><code class="language-csharp">using UnityEngine;
-using GoogleMobileAds.Api;
+  <pre><code class="language-csharp">// Code example - inventory
+    
+// "Create" event
 
-public class AdInitializer : MonoBehaviour
-{
-    void Start()
-    {
-        MobileAds.Initialize(initStatus => { });
+// size of the inventory
+inventory_width = 1; 
+inventory_height = 3;
+
+// creating array
+inventory = array_create(inventory_width * inventory_height, -1); // -1 is an empty cell
+
+// the size of the cell
+cell_size = 32;
+
+
+///////////////////////////////////
+
+// "Draw GUI" event
+
+
+
+for (var row = 0; row < inventory_height; row++) {
+    for (var col = 0; col < inventory_width; col++) {
+        
+        // get index from current cell
+        var index = row * inventory_width + col;
+        
+        // get ID of the object
+        var item_id = inventory[index];
+        
+        // get the coordinates of the object
+        var cell_x = 10 + col * cell_size;
+        var cell_y = 10 + row * cell_size; 
+        
+        // draw the object
+        if (item_id != -1) { 
+            draw_sprite(Collectible_item_sprite, item_id, cell_x + cell_size / 2, cell_y + cell_size / 2);
+        }
+		
+		
+		
     }
 }
 
