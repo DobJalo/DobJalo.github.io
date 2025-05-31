@@ -295,7 +295,8 @@ public class TimerScript : MonoBehaviour
 
         // show current score and best score
         data = SaveLoadTime.Load(nameTime);
-        YouWonText.text = "Level completed!\nYour score: " + time[0] + ":" + time[1] + ":" + time[2] + "\nBest score: " + data.time[0] + ":" + data.time[1] + ":" + data.time[2];
+        YouWonText.text = "Level completed!\nYour score: " + time[0] + ":" + time[1] + ":" + time[2] + 
+                                              "\nBest score: " + data.time[0] + ":" + data.time[1] + ":" + data.time[2];
     }
 
     // current timer is saved to temporary file when player leaves level
