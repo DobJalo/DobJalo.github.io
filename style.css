@@ -336,8 +336,7 @@ summary {
   max-width: 1200px;    
   max-height: 600px;             /* ограничение высоты */
   
-  padding-left: 2rem;
-  margin-left: 5rem;
+  align-items: center;
   
   overflow: auto;                /* включить прокрутку */
   /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);*/
