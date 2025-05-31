@@ -1,14 +1,13 @@
-/* === Цветовые переменные и переходы === */
 :root {
-  --bg: #181818;           /* Темный фон страницы */
-  --red: #ff2a2a;          /* Ярко-красный цвет акцентов */
-  --purple: #a044ff;       /* Фиолетовый цвет */
+  --bg: #181818;        
+  --red: #ff2a2a;       
+  --purple: #a044ff;      
   --grey: #616a71;
-  --text: #eaeaea;         /* Светлый цвет текста */
-  --transition: 0.4s ease; /* Плавность переходов */
+  --text: #eaeaea;        /*main text colour*/
+  --transition: 0.4s ease; 
 }
 
-/* === Базовые стили для body === */
+
 body {
   background: var(--bg);
   color: var(--text);
@@ -19,19 +18,19 @@ body {
   padding-bottom: 50px; 
 }
 
-/* === Стили для фиксированного хедера === */
+
 header {
-  position: fixed;           /* Закрепляем сверху */
+  position: fixed;      
   top: 0;
   left: 0;
   right: 0;
   background: linear-gradient(to right, var(--red), var(--purple));
-  padding: 0.4rem 1rem;     /* Внутренние отступы */ /*0ю75 1*/
+  padding: 0.4rem 1rem;    
   box-sizing: border-box;
-  z-index: 1000;             /* Поверх всего */
+  z-index: 1000;        
 }
 
-/* Контейнер внутри header */
+/* inside header */
 nav {
   display: flex;
   justify-content: space-between;
@@ -39,7 +38,7 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Заголовок имени */
+/* title */
 .header-title h1 {
   font-size: 2rem;
   font-weight: bold;
@@ -49,7 +48,7 @@ nav {
   margin-left: 2rem;
 }
 
-/* Подзаголовок */
+/* subtitle */
 .header-title .subtitle {
   font-size: 1.4rem;
   font-weight: 600;
@@ -59,12 +58,12 @@ nav {
   letter-spacing: 1px; 
 }
 
-/* Выделение фиолетовым */
+/* highlight purple */
 .highlight {
   color: var(--purple);
 }
 
-/* Ссылки в навигации */
+/* Links on top-right */
 .nav-links a {
   margin-left: 4rem;
   font-size: 1.2rem;
@@ -77,7 +76,7 @@ nav {
   margin-right: 1.6rem;
 }
 
-/* Подчеркивание при наведении */
+/* highlight links*/
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -103,15 +102,15 @@ nav {
   transform: scaleX(1);
 }
 
-/* === Основной контент main === */
+/* main */
 main {
-  padding-top: 6rem;       /* Отступ сверху, чтобы не залезал под header (примерно высота header + запас) */
+  padding-top: 6rem;      
   padding-left: 1rem;
   padding-right: 1rem;
   text-align: center;
 }
 
-/* Блок intro */
+/*  intro */
 .intro h2 {
   font-size: 3rem;
   color: var(--red);
@@ -124,7 +123,6 @@ main {
   margin-bottom: 1rem;
 }
 
-/* Параграф в intro (если появится) */
 .intro p {
   text-align: left;
   font-size: 1.2rem;
@@ -132,24 +130,22 @@ main {
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Секция проектов */
+
 .projects {
   margin-top: 4rem;
   display: flex;
-  justify-content: center; /* Разнести контент по краям */
-  /*align-items: flex-start;*/        /* Выровнять по верхнему краю */
+  justify-content: center; 
   gap: 2rem;
-  flex-wrap: wrap;                /* Поддержка адаптива */
+  flex-wrap: wrap;            
   align-items: center;
-  padding-left: 2rem; /**/
+  padding-left: 2rem; 
 }
 
-/*Фиол текст заголовок*/
+/* purple subtitle*/
 .projects pur {
   text-align: left;
   flex: 1;
   max-width: 500px;
-  /*margin-left: 3rem;*/
   font-size: 1.7rem;
   color: var(--purple);
   font-weight: bold;
@@ -160,10 +156,9 @@ padding-right: 2rem;
 }
 
     
-/* Текст о проектах */
+/* main text */
 .projects p {
   color: var(--text);
-  /*color: var(--purple);*/
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1.1rem;
   margin: 0;
@@ -174,7 +169,7 @@ padding-right: 2rem;
 padding-right: 2rem;
 }
 
-/* Изображение проекта */
+/* picture */
 .projects img {
   width: 400px;
   height: 500px;
@@ -183,7 +178,7 @@ padding-right: 2rem;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
-/* Изображение игр */
+/* games pictures */
 .projects .img_game {
   width: 400px;
   height: 400px;
@@ -222,8 +217,8 @@ padding-right: 2rem;
 .text-block {
   text-align: left;
   color: var(--purple);
-  flex: 1;                         /* Занимает доступное пространство */
-  max-width: 600px;               /* Ограничиваем ширину текста */
+  flex: 1;                       
+  max-width: 600px;             
   font-size: 1.1rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -237,7 +232,7 @@ padding-right: 2rem;
   text-shadow: 0 0 15px var(--purple);
 }
 
-/*для игр*/
+/*games*/
     .game-section {
       display: flex;
       justify-content: center;
@@ -255,7 +250,7 @@ padding-right: 2rem;
       margin-left: 5rem;
     }
 
-.game-text p{ /*обычный белый*/
+.game-text p{ /* main text */
   font-size: 1.1rem;
       flex: 1;
       max-width: 500px;
@@ -266,7 +261,7 @@ padding-right: 2rem;
   padding-left: 1rem;
 padding-right: 2rem;
     }
-.game-text pur{ /*фиол заголовок*/
+.game-text pur{ /* purple subtitle */
   font-size: 1.7rem;
       flex: 1;
       max-width: 500px;
@@ -337,7 +332,7 @@ summary {
 
   margin: 0 auto;
   
-  overflow: auto;                /* включить прокрутку */
+  overflow: auto;          
 
   white-space: pre;
   box-shadow: 0 0 35px var(--red);
@@ -365,20 +360,20 @@ padding-right: 2rem;
   box-shadow: 0 0 25px var(--purple);
 }
 
-/*Иконка гитхаба*/
+/* github icon */
 .github-icon {
   text-decoration: none;
   display: inline-block;
-  color: var(--red); /* или var(--text) */
+  color: var(--red); 
   transition: color 0.3s ease, transform 0.3s ease;
-  margin-left: 1rem; /* можно настроить */
+  margin-left: 1rem; 
 }
 
 .github-icon i {
-  font-size: 2rem; /* размер иконки */
+  font-size: 2rem; 
 }
 
 .github-icon:hover {
-  color: var(--purple); /* при наведении */
+  color: var(--purple);
   transform: scale(1.1);
 }
