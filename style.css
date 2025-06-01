@@ -384,7 +384,7 @@ padding-right: 2rem;
   margin: 4rem auto;
   padding: 2rem;
   background-color: #1a1a1a;
-  border: 1px solid var(--purple);
+  /*border: 1px solid var(--purple);*/
   border-radius: 12px;
   box-shadow: 0 0 30px var(--red);
   transition: box-shadow var(--transition), transform var(--transition);
@@ -443,13 +443,15 @@ padding-right: 2rem;
   border-radius: 8px;
   cursor: pointer;
   font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 0 15px var(--red);
-  transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  /*box-shadow: 0 0 15px var(--red);*/
+  /*transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);*/
+  color: var(--red);
 }
 
 .contact-form button:hover {
-  background: linear-gradient(90deg, var(--purple), var(--red));
-  box-shadow: 0 0 15px var(--purple);
-  transform: scale(1.05);
+  color: var(--purple);
+  /*background: linear-gradient(90deg, var(--purple), var(--red));
+  box-shadow: 0 0 15px var(--purple);*/
+  /*transform: scale(1.05);*/
 }
 
