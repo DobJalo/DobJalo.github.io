@@ -377,3 +377,79 @@ padding-right: 2rem;
   color: var(--purple);
   transform: scale(1.1);
 }
+
+/*contact form*/
+.contact-form {
+  max-width: 600px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #1a1a1a;
+  border: 1px solid var(--purple);
+  border-radius: 12px;
+  box-shadow: 0 0 30px var(--red);
+  transition: box-shadow var(--transition), transform var(--transition);
+}
+
+.contact-form:hover {
+  box-shadow: 0 0 30px var(--purple);
+  transform: scale(1.02);
+}
+
+.contact-form h2 {
+  font-size: 2rem;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2a2a;
+  color: var(--text);
+  font-size: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: inset 0 0 5px var(--grey);
+  transition: box-shadow var(--transition), background-color var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  background-color: #333;
+  box-shadow: 0 0 10px var(--purple);
+}
+
+.contact-form button {
+  background: linear-gradient(90deg, var(--red), var(--purple));
+  color: white;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 0 15px var(--red);
+  transition: background-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.contact-form button:hover {
+  background: linear-gradient(90deg, var(--purple), var(--red));
+  box-shadow: 0 0 15px var(--purple);
+  transform: scale(1.05);
+}
+
