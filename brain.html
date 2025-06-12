@@ -94,8 +94,119 @@
 <div style="height: 5rem;"></div>
 
 	  <div class="code-block">
-  <pre><code class="language-csharp">
-<!--ADD LATER-->
+  <pre><code class="language-csharp">// the script was made for settings: music volume slider bar,
+// sounds volume slider bar, mouse sensivity slider bar
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Settings : MonoBehaviour
+{
+    [Header("UI")]
+    public UnityEngine.UI.Slider musicSlider;
+    public UnityEngine.UI.Slider volumeSlider;
+    public UnityEngine.UI.Slider sensitivitySlider;
+
+    [Header("Audio Sources")]
+    public AudioSource[] audioSources; // sounds AudioSource
+    public AudioSource musicAudioSource; // music AudioSource
+
+    // keys to save/load
+    [Header("Settings")]
+    private const string VolumeKey = "Volume";
+    private const string MusicKey = "Music";
+    private const string SensitivityKey = "MouseSensitivity";
+
+    // integer to smooth sensivity value
+    private const int SensitivityInteger = 7;
+
+    void Start()
+    {
+        // load saved sounds volume
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
+        ApplyGeneralVolume(savedVolume);
+
+        // set the sounds volume slider
+        if (volumeSlider != null)
+        {
+            volumeSlider.value = savedVolume;
+            volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+        }
+
+        // load saved music volume
+        float savedMusic = PlayerPrefs.GetFloat(MusicKey, 1f);
+        ApplyMusicVolume(savedMusic);
+
+        // set the music volume slider
+        if (musicSlider != null)
+        {
+            musicSlider.value = savedMusic;
+            musicSlider.onValueChanged.AddListener(OnMusicChanged);
+        }
+
+        // load saved sensivity value
+        float savedSensitivity = PlayerPrefs.GetFloat(SensitivityKey, 2f * SensitivityInteger);
+
+        // apply sensivity slider
+        if (sensitivitySlider != null)
+        {
+            sensitivitySlider.value = savedSensitivity / SensitivityInteger;
+            sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
+        }
+    }
+
+    // called when the volume slider value changes
+    void OnVolumeChanged(float value)
+    {
+        PlayerPrefs.SetFloat(VolumeKey, value); // save to VolumeKey
+        PlayerPrefs.Save();
+        ApplyGeneralVolume(value); // apply new value
+    }
+
+    // called when the music slider value changes
+    void OnMusicChanged(float value)
+    {
+        PlayerPrefs.SetFloat(MusicKey, value); // save to MusicKey
+        PlayerPrefs.Save();
+        ApplyMusicVolume(value); // apply new value
+    }
+
+    // apply volume to all non-music audio sources
+    void ApplyGeneralVolume(float volume)
+    {
+        foreach (AudioSource source in audioSources)
+        {
+            if (source != null && source != musicAudioSource)
+            {
+                source.volume = volume;
+            }
+        }
+    }
+
+    // apply volume to the music source
+    void ApplyMusicVolume(float volume)
+    {
+        if (musicAudioSource != null)
+        {
+            musicAudioSource.volume = volume;
+        }
+    }
+
+    // called when sensitivity slider is changed
+    void OnSensitivityChanged(float value)
+    {
+        PlayerPrefs.SetFloat(SensitivityKey, value * SensitivityInteger); // save to SensitivityKey
+        PlayerPrefs.Save();
+    }
+
+    // loads main menu scene on "Back" button being pressed
+    public void Back()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+}
+
   </code></pre>
 </div>
 
