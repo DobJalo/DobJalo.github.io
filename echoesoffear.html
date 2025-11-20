@@ -77,17 +77,46 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen></iframe>
 
+
+		  
+
         <div class="slider">
+  <input type="radio" name="s" id="s1" checked>
+  <input type="radio" name="s" id="s2">
+  <input type="radio" name="s" id="s3">
+
   <div class="slides">
-    <img src="images/echoesoffear/fear1.png" alt="Screenshot 1">
-    <img src="images/echoesoffear/fear2.png" alt="Screenshot 2">
-    <a href="brain.html">
-      <img src="images/echoesoffear/fear3.png" alt="Screenshot 3">
-    </a>
+    <div class="slide">
+      <img src="images/echoesoffear/fear1.png" alt="Screenshot 1">
+    </div>
+    <div class="slide">
+      <img src="images/echoesoffear/fear2.png" alt="Screenshot 2">
+    </div>
+    <div class="slide">
+      <a href="brain.html"><img src="images/echoesoffear/fear3.png" alt="Screenshot 3"></a>
+    </div>
   </div>
 
-  <button class="prev">&#10094;</button>
-  <button class="next">&#10095;</button>
+  <label class="nav prev" for="s1" aria-hidden="true">&#10094;</label>
+  <label class="nav prev" for="s2" aria-hidden="true">&#10094;</label>
+  <label class="nav prev" for="s3" aria-hidden="true">&#10094;</label>
+
+  <label class="nav next" for="s1" aria-hidden="true">&#10095;</label>
+  <label class="nav next" for="s2" aria-hidden="true">&#10095;</label>
+  <label class="nav next" for="s3" aria-hidden="true">&#10095;</label>
+
+  <div class="dots">
+    <label for="s1"></label>
+    <label for="s2"></label>
+    <label for="s3"></label>
+  </div>
+</div>
+
+		  
+
+
+
+			
 </div>
 
         
