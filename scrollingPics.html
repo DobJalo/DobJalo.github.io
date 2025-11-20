@@ -1,0 +1,15 @@
+<script>
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-track img, .carousel-track a');
+  let index = 0;
+
+  document.querySelector('.next').onclick = () => {
+    index = (index + 1) % slides.length;
+    track.style.transform = `translateX(-${533 * index}px)`;
+  };
+
+  document.querySelector('.prev').onclick = () => {
+    index = (index - 1 + slides.length) % slides.length;
+    track.style.transform = `translateX(-${533 * index}px)`;
+  };
+</script>
