@@ -1,15 +1,22 @@
 <script>
   const track = document.querySelector('.carousel-track');
-  const slides = document.querySelectorAll('.carousel-track img, .carousel-track a');
+  const slides = document.querySelectorAll('.slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+
   let index = 0;
 
-  document.querySelector('.next').onclick = () => {
-    index = (index + 1) % slides.length;
+  function updateSlide() {
     track.style.transform = `translateX(-${533 * index}px)`;
-  };
+  }
 
-  document.querySelector('.prev').onclick = () => {
+  nextBtn.addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    updateSlide();
+  });
+
+  prevBtn.addEventListener('click', () => {
     index = (index - 1 + slides.length) % slides.length;
-    track.style.transform = `translateX(-${533 * index}px)`;
-  };
+    updateSlide();
+  });
 </script>
