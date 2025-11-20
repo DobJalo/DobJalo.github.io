@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="images/icon.png" type="image/png">
+  <title>Mariia Grigoreva Portfolio - The matter of Gray Matter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+
+
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/vs2015.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+  
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="header-title">
+        <h1>MARIIA <span class="highlight">GRIGOREVA</span></h1>
+        <p class="subtitle">Game Developer Portfolio</p>
+      </div>
+      <div class="nav-links">
+        <a href="DobJalo.github.io">About me</a>
+        <a href="games.html">Games</a>
+	      <!--<a href="art.html">Hobby: artwork</a>-->
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>The matter of Gray Matter</h2>
+    </section>
+
+
+    <section class="game-section">
+      <div class="game-text">
+        <pur>Game description</pur>
+	       <div style="height: 1rem;"></div>
+	      <p>Game description: 3D puzzle game about brain</p>
+        <p>Platform: PC</p>
+        <p>Engine: Unity</p>
+        <p>Language: C#</p>
+        <p>Year: 2025</p>
+        <p>Project type: Team work (5 people)</p>
+	       <div style="height: 1rem;"></div>
+        <p>A project done in a team of 5 people for an exam. The task was to make a small game (15-25 minutes of gameplay) in 16 weeks without using third-party assets. The assignment included research that we conducted to determine the target audience, their preferences, and their behavior.</p>
+        <div style="height: 1rem;"></div>
+        <p>The essence of the game is that it tests the player's senses by putting certain difficulties on the way, which can be deliberately confusing. The goal of the game is to complete it, including showing the results at the end.</p>
+        <div style="height: 1rem;"></div>
+        <pur>My input</pur>
+        <p>-Settings</p>
+        <p>-Player movements (WASD (inverted on purpose) - walk, Space - jump, Left Shift - run)</p>
+        <p>-Wind effect (pushing force) and wind particles</p>
+        <p>-Checkpoints (including last checkpoint saving system)</p>
+        <p>-Lasers (that kill player if player enter laser collider)</p> 
+        <p>-Death system: player dies -> death screen -> player goes to last checkpoint</p>
+        <p>-Score system and timer</p>
+        <p>-Rat holding a sign (3D: made in Blender), UI on the sign, animation of the rat</p>
+        <p>-Neuron platform (3D: made in Blender)</p>
+        <div style="height: 1rem;"></div>
+        <div class="button-wrapper">
+        <a href="https://dobjalo.itch.io/thematterofgreymatter" target="_blank" class="pdf-button">itch.io page</a>
+        </div>
+        <p>Password to access itch.io page: 1234</p>
+
+
+
+<div style="height: 3rem;"></div>
+
+
+
+        
+        
+      </div>
+      <div class="game-media">
+         <iframe class="game-video" width="533" height="300"
+        src="https://www.youtube.com/watch?v=9JKgl5tNVjw"
+        title="YouTube video player" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
+
+        <a>
+          <img src="images/brain/brain_1.png" alt="Game Screenshot" style="width: 533px; height: 260px; vertical-align: middle; margin-right: 0.5rem;">
+          </a>
+	      <a>
+          <img src="images/brain/brain_3.png" alt="Game Screenshot" style="width: 533px; height: 260px; vertical-align: middle; margin-right: 0.5rem;">
+          </a>
+	      <!--<a href="brain.html">
+          <img src="images/brain/brain_2.png" alt="Game Screenshot" style="width: 533px; height: 260px; vertical-align: middle; margin-right: 0.5rem;">
+          </a>-->
+	      <!--<a href="brain.html">
+          <img src="images/brain/brain_4.png" alt="Game Screenshot" style="width: 533px; height: 260px; vertical-align: middle; margin-right: 0.5rem;">
+          </a>-->
+	      <a>
+          <img src="images/brain/brain_5.png" alt="Game Screenshot" style="width: 533px; height: 260px; vertical-align: middle; margin-right: 0.5rem;">
+          </a>
+	      <!--<a href="brain.html">
+          <img src="images/brain/brain_6.png" alt="Game Screenshot" style="width: 533px; height: 260px; vertical-align: middle; margin-right: 0.5rem;">
+          </a>-->
+        
+      </div>
+    </section>
+
+
+<div style="height: 5rem;"></div>
+
+	  <div class="code-block">
+  <pre><code class="language-csharp">// the script was made for settings: music volume slider bar,
+// sounds volume slider bar, mouse sensivity slider bar
+
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class Settings : MonoBehaviour
+{
+    [Header("UI")]
+    public UnityEngine.UI.Slider musicSlider;
+    public UnityEngine.UI.Slider volumeSlider;
+    public UnityEngine.UI.Slider sensitivitySlider;
+
+    [Header("Audio Sources")]
+    public AudioSource[] audioSources; // sounds AudioSource
+    public AudioSource musicAudioSource; // music AudioSource
+
+    // keys to save/load
+    [Header("Settings")]
+    private const string VolumeKey = "Volume";
+    private const string MusicKey = "Music";
+    private const string SensitivityKey = "MouseSensitivity";
+
+    // integer to smooth sensivity value
+    private const int SensitivityInteger = 7;
+
+    void Start()
+    {
+        // load saved sounds volume
+        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
+        ApplyGeneralVolume(savedVolume);
+
+        // set the sounds volume slider
+        if (volumeSlider != null)
+        {
+            volumeSlider.value = savedVolume;
+            volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
+        }
+
+        // load saved music volume
+        float savedMusic = PlayerPrefs.GetFloat(MusicKey, 1f);
+        ApplyMusicVolume(savedMusic);
+
+        // set the music volume slider
+        if (musicSlider != null)
+        {
+            musicSlider.value = savedMusic;
+            musicSlider.onValueChanged.AddListener(OnMusicChanged);
+        }
+
+        // load saved sensivity value
+        float savedSensitivity = PlayerPrefs.GetFloat(SensitivityKey, 2f * SensitivityInteger);
+
+        // apply sensivity slider
+        if (sensitivitySlider != null)
+        {
+            sensitivitySlider.value = savedSensitivity / SensitivityInteger;
+            sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
+        }
+    }
+
+    // called when the volume slider value changes
+    void OnVolumeChanged(float value)
+    {
+        PlayerPrefs.SetFloat(VolumeKey, value); // save to VolumeKey
+        PlayerPrefs.Save();
+        ApplyGeneralVolume(value); // apply new value
+    }
+
+    // called when the music slider value changes
+    void OnMusicChanged(float value)
+    {
+        PlayerPrefs.SetFloat(MusicKey, value); // save to MusicKey
+        PlayerPrefs.Save();
+        ApplyMusicVolume(value); // apply new value
+    }
+
+    // apply volume to all non-music audio sources
+    void ApplyGeneralVolume(float volume)
+    {
+        foreach (AudioSource source in audioSources)
+        {
+            if (source != null && source != musicAudioSource)
+            {
+                source.volume = volume;
+            }
+        }
+    }
+
+    // apply volume to the music source
+    void ApplyMusicVolume(float volume)
+    {
+        if (musicAudioSource != null)
+        {
+            musicAudioSource.volume = volume;
+        }
+    }
+
+    // called when sensitivity slider is changed
+    void OnSensitivityChanged(float value)
+    {
+        PlayerPrefs.SetFloat(SensitivityKey, value * SensitivityInteger); // save to SensitivityKey
+        PlayerPrefs.Save();
+    }
+
+    // loads main menu scene on "Back" button being pressed
+    public void Back()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+}
+
+  </code></pre>
+</div>
+
+
+	  
+
+   
+  </main>
+
+</body>
+</html>
