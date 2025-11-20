@@ -101,116 +101,180 @@
 <div style="height: 5rem;"></div>
 
 	  <div class="code-block">
-  <pre><code class="language-csharp">// the script was made for settings: music volume slider bar,
-// sounds volume slider bar, mouse sensivity slider bar
+  <pre><code class="language-csharp">// the script is responsible for hand gestures (open menu gesture, walking gesture)
 
 
+﻿using System.Collections.Generic;
+using Unity.XR.CoreUtils;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.XR;
+using UnityEngine.XR.Hands;
+using static UnityEngine.UI.ContentSizeFitter;
+using static UnityEngine.XR.OpenXR.Features.Interactions.PalmPoseInteraction;
 
-public class Settings : MonoBehaviour
+public class MenuHandGesture : MonoBehaviour
 {
-    [Header("UI")]
-    public UnityEngine.UI.Slider musicSlider;
-    public UnityEngine.UI.Slider volumeSlider;
-    public UnityEngine.UI.Slider sensitivitySlider;
-
-    [Header("Audio Sources")]
-    public AudioSource[] audioSources; // sounds AudioSource
-    public AudioSource musicAudioSource; // music AudioSource
-
-    // keys to save/load
-    [Header("Settings")]
-    private const string VolumeKey = "Volume";
-    private const string MusicKey = "Music";
-    private const string SensitivityKey = "MouseSensitivity";
-
-    // integer to smooth sensivity value
-    private const int SensitivityInteger = 7;
+    public XRHandSubsystem handSubsystem; // system that tracks player's hands
+    public GameObject menuUI;
+    public Transform headTransform;
+    public XROrigin xrOrigin;
+    private bool menuOpen = false;
+    private bool fistMade = false;
+    private float handDistance = 1.7f;
+    private float fistThreshold = 0.05f;
+    private float extendedThreshold = 0.08f;
 
     void Start()
     {
-        // load saved sounds volume
-        float savedVolume = PlayerPrefs.GetFloat(VolumeKey, 1f);
-        ApplyGeneralVolume(savedVolume);
+        // check the list of XRHandSubsystems
+        List<XRHandSubsystem> subsystems = new List<XRHandSubsystem>();
+        SubsystemManager.GetSubsystems(subsystems);
 
-        // set the sounds volume slider
-        if (volumeSlider != null)
+        // get the XRHandSubsystem
+        if (subsystems.Count > 0)
         {
-            volumeSlider.value = savedVolume;
-            volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
-        }
-
-        // load saved music volume
-        float savedMusic = PlayerPrefs.GetFloat(MusicKey, 1f);
-        ApplyMusicVolume(savedMusic);
-
-        // set the music volume slider
-        if (musicSlider != null)
-        {
-            musicSlider.value = savedMusic;
-            musicSlider.onValueChanged.AddListener(OnMusicChanged);
-        }
-
-        // load saved sensivity value
-        float savedSensitivity = PlayerPrefs.GetFloat(SensitivityKey, 2f * SensitivityInteger);
-
-        // apply sensivity slider
-        if (sensitivitySlider != null)
-        {
-            sensitivitySlider.value = savedSensitivity / SensitivityInteger;
-            sensitivitySlider.onValueChanged.AddListener(OnSensitivityChanged);
+            handSubsystem = subsystems[0];
         }
     }
 
-    // called when the volume slider value changes
-    void OnVolumeChanged(float value)
+    void Update()
     {
-        PlayerPrefs.SetFloat(VolumeKey, value); // save to VolumeKey
-        PlayerPrefs.Save();
-        ApplyGeneralVolume(value); // apply new value
-    }
-
-    // called when the music slider value changes
-    void OnMusicChanged(float value)
-    {
-        PlayerPrefs.SetFloat(MusicKey, value); // save to MusicKey
-        PlayerPrefs.Save();
-        ApplyMusicVolume(value); // apply new value
-    }
-
-    // apply volume to all non-music audio sources
-    void ApplyGeneralVolume(float volume)
-    {
-        foreach (AudioSource source in audioSources)
+        if (handSubsystem != null)
         {
-            if (source != null && source != musicAudioSource)
+            var leftHand = handSubsystem.leftHand; // get the left hand
+            if (leftHand.isTracked) // checking that the hand is visible
             {
-                source.volume = volume;
+                var palmL = leftHand.GetJoint(XRHandJointID.Palm);
+                if (palmL.TryGetPose(out var palmLPose)) // get palm pose
+                {
+                    #region Opening menu
+
+                    // get the joints of the fingertips and palm
+                    var thumbTip = leftHand.GetJoint(XRHandJointID.ThumbTip);
+                    var indexTip = leftHand.GetJoint(XRHandJointID.IndexTip);
+                    var middleTip = leftHand.GetJoint(XRHandJointID.MiddleTip);
+                    var ringTip = leftHand.GetJoint(XRHandJointID.RingTip);
+                    var littleTip = leftHand.GetJoint(XRHandJointID.LittleTip);
+                    var palm = leftHand.GetJoint(XRHandJointID.Palm);
+
+                    // check if it was able to get the pose of all fingers
+                    if (thumbTip.TryGetPose(out var thumbPose) &&
+                    indexTip.TryGetPose(out var indexPose) &&
+                    middleTip.TryGetPose(out var middlePose) &&
+                    ringTip.TryGetPose(out var ringPose) &&
+                    littleTip.TryGetPose(out var littlePose) &&
+                    palm.TryGetPose(out var palmPose))
+                    {
+                        // set isCustomFist - thumb and little finger are open, the rest is closed
+                        bool isCustomFist =
+                            Vector3.Distance(thumbPose.position, palmPose.position) > extendedThreshold &&
+                            Vector3.Distance(indexPose.position, palmPose.position) < fistThreshold &&
+                            Vector3.Distance(middlePose.position, palmPose.position) < fistThreshold &&
+                            Vector3.Distance(ringPose.position, palmPose.position) < fistThreshold &&
+                            Vector3.Distance(littlePose.position, palmPose.position) > extendedThreshold;
+
+                        // if the gesture works
+                        if (isCustomFist)
+                        {
+                            // to avoid triggering multiple times when held
+                            if (!fistMade)
+                            {
+                                menuOpen = !menuOpen;
+                                menuUI.SetActive(menuOpen);
+                                fistMade = true;
+                            }
+                        }
+                        else
+                        {
+                            fistMade = false;
+                        }
+                    }
+                    #endregion
+
+                    // this code was smoothly aligning the player's position height with the ground surface
+                    // I tried to use it because there was a bug when player falls under the terrain object
+                    //did not work with the colliders in the scene
+                    #region OldWalking
+                    /*Vector3 headForward = headTransform.forward;
+                    Vector3 handWorldPos = xrOrigin.transform.TransformPoint(palmLPose.position);
+                    Vector3 headWorldPos = Camera.main.transform.position;
+
+                    float distance1 = Vector3.Distance(handWorldPos, headWorldPos);
+
+                    if (distance1 >= handDistance && AlienVision.notSpotted == false)
+                    { 
+                        Vector3 move = headForward;
+                        move.y = 0f;
+                        move.Normalize();
+                        float speed = 1.5f;
+
+                        Vector3 nextPos = transform.position + move * speed * Time.deltaTime;
+                        RaycastHit hit;
+                        float smoothSpeed = 5f;
+                        if (Physics.Raycast(nextPos + Vector3.up * 2f, Vector3.down, out hit, 10f, LayerMask.GetMask("Ground", "Default")))
+                        {
+                            nextPos.y = Mathf.Lerp(transform.position.y, hit.point.y, smoothSpeed * Time.deltaTime);
+                        }
+
+                        transform.position = nextPos;
+                    }*/
+                    #endregion
+
+
+                    #region NewWalking
+                    Vector3 headForward = headTransform.forward; // get player's head direction
+
+                    // position of the head and the hand in the scene
+                    Vector3 handWorldPos = xrOrigin.transform.TransformPoint(palmLPose.position);
+                    Vector3 headWorldPos = Camera.main.transform.position;
+
+                    float distance1 = Vector3.Distance(handWorldPos, headWorldPos); // calculate the distance between the head and the hand
+
+                    // check if it was able to get the pose of all fingers for this gesture
+                    if (//thumbTip.TryGetPose(out var thumbPose2) &&
+                        indexTip.TryGetPose(out var indexPose2) &&
+                    middleTip.TryGetPose(out var middlePose2) &&
+                    ringTip.TryGetPose(out var ringPose2) &&
+                    littleTip.TryGetPose(out var littlePose2) &&
+                    palm.TryGetPose(out var palmPose2))
+                    {
+                        // index finger is open, the rest is closed (thumb doesn't count)
+                        bool isCustomFist =
+                            //Vector3.Distance(thumbPose2.position, palmPose2.position) < fistThreshold &&
+                            Vector3.Distance(indexPose2.position, palmPose2.position) > extendedThreshold &&
+                            Vector3.Distance(middlePose2.position, palmPose2.position) < fistThreshold &&
+                            Vector3.Distance(ringPose2.position, palmPose2.position) < fistThreshold &&
+                            Vector3.Distance(littlePose2.position, palmPose2.position) < fistThreshold;
+
+                        // if the hand is far enough and the player is not detected by the enemy - move forward
+                        if (distance1 >= handDistance && AlienVision.notSpotted == false && isCustomFist)
+                        {
+                            Vector3 move = headForward;
+                            move.y = 0f; // remove vertical movement
+                            move.Normalize();
+                            float speed = 1.5f; // walking speed
+
+                            // calculate new position
+                            Vector3 nextPos = transform.position + move * speed * Time.deltaTime;
+                            RaycastHit hit;
+                            float smoothSpeed = 5f;
+
+                            // check if there is ground under the feet and align the height with the surface
+                            if (Physics.Raycast(nextPos + Vector3.up * 2f, Vector3.down, out hit, 10f, LayerMask.GetMask("Ground", "Default")))
+                            {
+                                nextPos.y = Mathf.Lerp(transform.position.y, hit.point.y, smoothSpeed * Time.deltaTime);
+                            }
+
+                            // change the position
+                            transform.position = nextPos;
+                        }
+                    }
+                    #endregion
+                }
+
             }
+  
         }
-    }
-
-    // apply volume to the music source
-    void ApplyMusicVolume(float volume)
-    {
-        if (musicAudioSource != null)
-        {
-            musicAudioSource.volume = volume;
-        }
-    }
-
-    // called when sensitivity slider is changed
-    void OnSensitivityChanged(float value)
-    {
-        PlayerPrefs.SetFloat(SensitivityKey, value * SensitivityInteger); // save to SensitivityKey
-        PlayerPrefs.Save();
-    }
-
-    // loads main menu scene on "Back" button being pressed
-    public void Back()
-    {
-        SceneManager.LoadScene("Main Menu");
     }
 }
 
