@@ -458,105 +458,40 @@ padding-right: 2rem;
 
 
 /*scrolling pictures*/
-.slider {
+.carousel {
   position: relative;
   width: 533px;
   height: 260px;
   overflow: hidden;
   margin: 0 auto;
-  font-family: sans-serif;
 }
 
-
-.slider input[type="radio"] {
-  display: none;
-}
-
-
-.slides {
+.carousel-track {
   display: flex;
-  width: 300%; 
-  height: 100%;
   transition: transform 0.5s ease;
 }
 
-
-.slide {
-  flex: 0 0 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.carousel img {
+  width: 533px;
+  height: 260px;
+  flex-shrink: 0;
   border-radius: 6px;
+  object-fit: cover;
 }
 
-
-#s1:checked ~ .slides { transform: translateX(0%); }
-#s2:checked ~ .slides { transform: translateX(-100%); }
-#s3:checked ~ .slides { transform: translateX(-200%); }
-
-
-.nav {
+.carousel button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  padding: 6px 12px;
   background: rgba(0,0,0,0.5);
-  color: #fff;
-  padding: 6px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  user-select: none;
+  color: white;
   font-size: 24px;
-  line-height: 1;
-}
-
-
-.nav { display: none; }
-
-
-#s1:checked ~ .next[for="s2"] { display: block; right: 5px; }
-#s1:checked ~ .prev[for="s3"] { display: block; left: 5px; }
-
-
-#s2:checked ~ .prev[for="s1"] { display: block; left: 5px; }
-#s2:checked ~ .next[for="s3"] { display: block; right: 5px; }
-
-
-#s3:checked ~ .prev[for="s2"] { display: block; left: 5px; }
-#s3:checked ~ .next[for="s1"] { display: block; right: 5px; }
-
-
-.dots {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 8px;
-  display: flex;
-  gap: 8px;
-  z-index: 12;
-}
-.dots label {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  display: inline-block;
+  border: none;
   cursor: pointer;
+  border-radius: 4px;
 }
-#s1:checked ~ .dots label[for="s1"],
-#s2:checked ~ .dots label[for="s2"],
-#s3:checked ~ .dots label[for="s3"] {
-  background: rgba(255,255,255,0.95);
-  box-shadow: 0 0 2px rgba(0,0,0,0.4);
-}
+
+.prev { left: 5px; }
+.next { right: 5px; }
 
