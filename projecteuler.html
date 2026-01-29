@@ -92,7 +92,7 @@
 
 
  <div class="code-block">
-  <pre><code class="language-cpp"> // Code example
+  <pre><code class="language-cpp">// Code example
 	  
 // What is the value of the first triangle
 // number to have over five hundred divisors?
@@ -100,39 +100,54 @@
 #include <iostream>
 #include <cmath>
 
-// Returns the number of divisors of n using prime factorization
+// сounts how many divisors the number n has
 int CountDivisors(long long n)
 {
+    // store the total number of divisors
     int result = 1;
 
+    // try all possible divisors starting from 2
+    // go up to sqrt(n)
     for (long long p = 2; p * p <= n; ++p)
     {
+        // сheck if p divides n
         if (n % p == 0)
         {
             int exponent = 0;
+
+            // сount how many times p divides n
             while (n % p == 0)
             {
                 n /= p;
                 ++exponent;
             }
-            result = (exponent + 1);
+
+            // гpdate the number of divisors
+            // for a prime factor with exponent e, it adds (e + 1) options
+            result *= (exponent + 1);
         }
     }
 
+    // if n is still greater than 1 -
+    // n is a prime number
     if (n > 1)
-        result= 2;
+        result *= 2;
 
     return result;
 }
 
-// Finds the first triangle number with more than 'limit' divisors
+// find the first triangle number that has more than 'limit' divisors
 long long FindHighlyDivisibleTriangle(int limit)
 {
     long long triangle = 0;
 
+    // generate triangle numbers one by one
     for (long long i = 1;; ++i)
     {
+        // next triangle number
         triangle += i;
+
+        // check how many divisors it has
         if (CountDivisors(triangle) > limit)
             return triangle;
     }
