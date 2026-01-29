@@ -40,7 +40,6 @@
 
 
     <section class="game-section">
-		<div style="display: flex; gap: 2rem; align-items: flex-start;">
       <div class="game-text">
         <pur>Game description</pur>
 	       <div style="height: 1rem;"></div>
@@ -91,44 +90,58 @@
 
  <div class="code-block">
   <pre><code class="language-cplusplus"> // Code example
+	  
 	  // What is the value of the first triangle number to have over five hundred divisors?
 
 	  #include <iostream>
+#include <cmath>
 
-void Problem12()
+// Returns the number of divisors of n using prime factorization
+int CountDivisors(long long n)
 {
-	long long currentTriangle=0;
-	int divisorsNumber = 1; // start with 1 to inclide divisor that is currentTriangle itself
+    int result = 1;
 
-	for (long long i = 1; divisorsNumber <= 500; i++)
-	{
-		divisorsNumber = 1; // reset to 1 again
-		currentTriangle += i; // get the next triangle number
+    for (long long p = 2; p * p <= n; ++p)
+    {
+        if (n % p == 0)
+        {
+            int exponent = 0;
+            while (n % p == 0)
+            {
+                n /= p;
+                ++exponent;
+            }
+            result = (exponent + 1);
+        }
+    }
 
-		long long limit = sqrt(currentTriangle); 
-		for (long long divisor = 1; divisor <= limit; divisor++) // count all the divisors
-		{
-			if (currentTriangle % divisor == 0)
-			{
-				if (divisor * divisor == currentTriangle) // do not include extra one if both divisors are the same number
-				{
-					divisorsNumber++; 
-				}
-				else
-				{
-					divisorsNumber += 2; // automatically include divisors that are > than sqrt(currentTriangle)
-				}
-			}
-		}
-	}
+    if (n > 1)
+        result= 2;
 
-	std::cout << "Result: " << currentTriangle << std::endl;
+    return result;
+}
+
+// Finds the first triangle number with more than 'limit' divisors
+long long FindHighlyDivisibleTriangle(int limit)
+{
+    long long triangle = 0;
+
+    for (long long i = 1;; ++i)
+    {
+        triangle += i;
+        if (CountDivisors(triangle) > limit)
+            return triangle;
+    }
+}
+
+int main()
+{
+    std::cout << "Result: " << FindHighlyDivisibleTriangle(500) << std::endl;
 }
 
   </code></pre>
 </div>
 
-		</div>
 </section>
 	  
 
