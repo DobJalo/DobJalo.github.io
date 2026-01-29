@@ -335,7 +335,7 @@ summary {
   overflow: auto;          
 
   white-space: pre;
-  box-shadow: 0 0 15px var(--red);
+  box-shadow: 0 0 25px var(--red);
   text-align: left;
   
   padding: 0;
@@ -355,10 +355,10 @@ padding-right: 2rem;
 }
 
 
-/*.code-block:hover {
-  transform: scale(1.05);
+.code-block:hover {
+  /*transform: scale(1.05);*/
   box-shadow: 0 0 25px var(--purple);
-}*/
+}
 
 /* github icon */
 .github-icon {
