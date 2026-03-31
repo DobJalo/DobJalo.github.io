@@ -100,68 +100,39 @@
   <pre><code class="language-cpp">// Code example
 
 // Problem statement:
-// What is the value of the first triangle
-// number to have over five hundred divisors?
-
+// What is the value of the first triangle number
+//to have over five hundred divisors?
+	  
 #include <iostream>
-#include <cmath>
 
-// сounts how many divisors the number n has
-int CountDivisors(long long n)
+void Problem12()
 {
-    // store the total number of divisors
-    int result = 1;
+	long long currentTriangle=0;
+	int divisorsNumber = 1; // start with 1 to inclide divisor that is currentTriangle itself
 
-    // try all possible divisors starting from 2
-    // go up to sqrt(n)
-    for (long long p = 2; p * p <= n; ++p)
-    {
-        // сheck if p divides n
-        if (n % p == 0)
-        {
-            int exponent = 0;
+	for (long long i = 1; divisorsNumber <= 500; i++)
+	{
+		divisorsNumber = 1; // reset to 1 again
+		currentTriangle += i; // get the next triangle number
 
-            // сount how many times p divides n
-            while (n % p == 0)
-            {
-                n /= p;
-                ++exponent;
-            }
+		long long limit = sqrt(currentTriangle); 
+		for (long long divisor = 1; divisor <= limit; divisor++) // count all the divisors
+		{
+			if (currentTriangle % divisor == 0)
+			{
+				if (divisor * divisor == currentTriangle) // do not include extra one if both divisors are the same number
+				{
+					divisorsNumber++; 
+				}
+				else
+				{
+					divisorsNumber += 2; // automatically include divisors that are > than sqrt(currentTriangle)
+				}
+			}
+		}
+	}
 
-            // гpdate the number of divisors
-            // for a prime factor with exponent e, it adds (e + 1) options
-            result *= (exponent + 1);
-        }
-    }
-
-    // if n is still greater than 1 -
-    // n is a prime number
-    if (n > 1)
-        result *= 2;
-
-    return result;
-}
-
-// find the first triangle number that has more than 'limit' divisors
-long long FindHighlyDivisibleTriangle(int limit)
-{
-    long long triangle = 0;
-
-    // generate triangle numbers one by one
-    for (long long i = 1;; ++i)
-    {
-        // next triangle number
-        triangle += i;
-
-        // check how many divisors it has
-        if (CountDivisors(triangle) > limit)
-            return triangle;
-    }
-}
-
-int main()
-{
-    std::cout << "Result: " << FindHighlyDivisibleTriangle(500);
+	std::cout << "Result: " << currentTriangle << std::endl;
 }
 
   </code></pre>
