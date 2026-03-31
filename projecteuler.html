@@ -128,16 +128,17 @@ void Problem12()
 		{
 			if (currentTriangle % divisor == 0)
 			{
-				// avoid including extra one if both divisors
-				// are the same number
+				// avoid including extra one if 
+				// both divisors are the same number
 				if (divisor * divisor == currentTriangle) 
 				{
 					divisorsNumber++; 
 				}
 				else
 				{
-					// automatically include divisors
-					// that are > than sqrt(currentTriangle)
+					// automatically include
+					// divisors that 
+					// are > than sqrt(currentTriangle)
 					divisorsNumber += 2; 
 				}
 			}
