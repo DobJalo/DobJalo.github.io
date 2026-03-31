@@ -108,25 +108,37 @@
 void Problem12()
 {
 	long long currentTriangle=0;
-	int divisorsNumber = 1; // start with 1 to inclide divisor that is currentTriangle itself
+
+	// start with 1 to inclide divisor that is
+	// currentTriangle itself
+	int divisorsNumber = 1; 
 
 	for (long long i = 1; divisorsNumber <= 500; i++)
 	{
-		divisorsNumber = 1; // reset to 1 again
-		currentTriangle += i; // get the next triangle number
+		// reset to 1 again
+		divisorsNumber = 1; 
+
+		// get the next triangle number
+		currentTriangle += i;
 
 		long long limit = sqrt(currentTriangle); 
-		for (long long divisor = 1; divisor <= limit; divisor++) // count all the divisors
+
+		// count all the divisors
+		for (long long divisor = 1; divisor <= limit; divisor++) 
 		{
 			if (currentTriangle % divisor == 0)
 			{
-				if (divisor * divisor == currentTriangle) // do not include extra one if both divisors are the same number
+				// avoid including extra one if both divisors
+				// are the same number
+				if (divisor * divisor == currentTriangle) 
 				{
 					divisorsNumber++; 
 				}
 				else
 				{
-					divisorsNumber += 2; // automatically include divisors that are > than sqrt(currentTriangle)
+					// automatically include divisors
+					// that are > than sqrt(currentTriangle)
+					divisorsNumber += 2; 
 				}
 			}
 		}
